@@ -1,0 +1,86 @@
+/* File: styles.css */
+/* --- a/file:///Users/phoom/PhotoWeb/styles.css */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #1e3a8a;
+    border-radius: 5px;
+}
+
+/* Section styles */
+section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5e7eb;
+    color: #555;
+    font-size: 0.9rem;
+}
