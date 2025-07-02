@@ -6,49 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="#intro">HOME</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="#about">ABOUT</a>
                 </li>
                 <li>
-                    <a href="#experiences">Experiences</a>
+                    <a href="#experiences">EXPERIENCES</a>
                 </li>
                 <li>
                     <a href="#pattapixels">PattaPixels</a>
                 </li>
                 <li>
-                    <a href="#contacts">contacts</a>
+                    <a href="#contacts">CONTACTS</a>
+                </li>
+                <li>
+                    <a href="#resume">RESUME</a>
                 </li>
             </ul>
         </nav>
     </header>
+
+    <div class="hanging-icons">
+        <div class="hanger">
+            <div class="rope"></div>
+            <img src="images/camera.png" class="icon" alt="photography">
+        </div>
+        <div class="hanger">
+            <div class="rope"></div>
+            <img src="images/compass.png" class="icon" alt="experiences">
+        </div>
+        <div class="hanger">
+            <div class="rope"></div>
+            <img src="images/clipboard.png" class="icon" alt="resume">
+        </div>
+        <div class="hanger">
+            <div class="rope"></div>
+            <img src="images/plane.png" class="icon" alt="contact">
+        </div>
+    </div>
+
     <main>
-        <h1>Hey! It's Phoom</h1>
-        <h1>Interested in my photography?</h1>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to my personal page where I share my photos and social media links.</p>
+        <section id="intro">
+            <h1>HEY!</h1>
+            <h2>I'm Phoom</h2>
+            <p>The 'h' is silent by the way</p>
+            <img src="images/me.png" alt="Phoom sitting on stairs" class="intro-img">
         </section>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>This section contains information about me and my interests.</p>
+            <p>I'm Phoom, a rising sophomore at Dartmout College. I am planning to major in
+                Quantiative Social Science & Computer Science and minor in Asian Studies. My passion
+                lies in applying data science tp sociopolitical issues, data normalization, and
+                web design.
+            </p>
+            <p>In my free time, I enjoy photography, playing video games (currently obsessed with Balatro) and
+                volleyball,
+                watching soccer (Go Leicester City!), collecting <i>Magic: The Gathering</i> cards, and trying new
+                foods.
+            </p>
         </section>
 
-        <section id="services">
-            <h2>My Photos</h2>
+        <section id="experiences">
+            <h2>Experiences</h2>
+            <p>Here I will share my experiences and stories.</p>
+        </section>
+
+        <section id="pattapixels">
+            <h2>PattaPixels</h2>
             <p>Here you can find a collection of my favorite photos.</p>
         </section>
 
-        <section id="contact">
+        <section id="contacts">
             <h2>Contact Me</h2>
             <p>You can reach me through my social media accounts.</p>
         </section>
