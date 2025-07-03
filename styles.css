@@ -191,6 +191,8 @@ footer {
     font-size: 0.9rem;
 }
 
+/* intro styles*/
+
 .intro-img {
     width: 1000px;
     max-width: 1000px;
@@ -203,7 +205,6 @@ footer {
 .hanging-icons {
     position: absolute;
     top: 80px;
-    /* adjust based on header height */
     left: 0;
     width: 100%;
     display: flex;
@@ -211,7 +212,6 @@ footer {
     gap: 60px;
     z-index: 10;
     pointer-events: none;
-    /* optional: let clicks pass through */
 }
 
 .hanger {
@@ -240,16 +240,16 @@ footer {
 .rope {
     width: 6px;
     height: 500px;
-    /* adjust based on how long you want the rope to hang */
     background-image: url('images/rope.png');
     background-repeat: repeat-y;
     background-size: contain;
+    margin-top: -20px;
     margin-bottom: -20px;
 }
 
 .icon {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     cursor: pointer;
     margin-top: -50px;
     transition: transform 0.3s ease;
@@ -270,4 +270,28 @@ footer {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+#camera {
+    left: 10%;
+    position: absolute;
+    top: 70px;
+}
+
+#briefcase {
+    left: 20%;
+    position: absolute;
+    top: -300px;
+}
+
+#clipboard {
+    right: 10%;
+    position: absolute;
+    top: 70px;
+}
+
+#envelope {
+    right: 20%;
+    position: absolute;
+    top: -300px;
 }
