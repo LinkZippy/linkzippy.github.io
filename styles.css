@@ -155,6 +155,7 @@ section {
     opacity: 0;
     animation: fadeInUp 2.5s ease-out forwards;
     animation-delay: 1s;
+    margin-bottom: -100px;
 }
 
 #intro p {
@@ -163,6 +164,7 @@ section {
     font-family: 'Times New Roman', Times, serif;
     animation: fadeInUp 3s ease-in forwards;
     animation-delay: 1.5s;
+    margin-top: 100px;
 }
 
 section h1 {
@@ -197,7 +199,7 @@ footer {
     width: 1000px;
     max-width: 1000px;
     height: auto;
-    margin-bottom: 103px;
+    margin-bottom: 0px;
     display: block;
     animation: bounceInUp 1s ease-out forwards;
 }
@@ -218,14 +220,14 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: slideInDown 1.2s ease-out forwards;
-    opacity: 0;
-    animation-delay: 2.2s;
+    transform: translateY(-800px);
+    /* make sure it starts above even if no animation triggers */
+    animation: hangDown 2s ease-out forwards;
     pointer-events: auto;
-    /* re-enable clicking on icons */
+    animation-delay: 2s;
 }
 
-.hanger:nth-child(2) {
+/* .hanger:nth-child(2) {
     animation-delay: 2.4s;
 }
 
@@ -235,7 +237,7 @@ footer {
 
 .hanger:nth-child(4) {
     animation-delay: 2.8s;
-}
+} */
 
 .rope {
     width: 6px;
@@ -259,16 +261,15 @@ footer {
     transform: scale(1.1) rotate(2deg);
 }
 
-/* Slide In Down Animation */
-@keyframes slideInDown {
+@keyframes hangDown {
     0% {
-        transform: translateY(-100px);
-        opacity: 0;
+        transform: translateY(-500px);
+        /* start far above */
     }
 
     100% {
         transform: translateY(0);
-        opacity: 1;
+        /* drop down to resting position */
     }
 }
 
