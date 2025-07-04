@@ -72,9 +72,10 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f7fa;
+    /* background-color: #f5f7fa; */
     color: #333;
     line-height: 1.6;
+    height: 100vh;
 }
 
 header {
@@ -115,12 +116,44 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Section styles */
+/* 
+Section styles 
+*/
 section {
     padding: 80px 20px;
     max-width: 900px;
     margin: auto;
 }
+
+section h1 {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5e7eb;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* 
+intro styles
+*/
 
 #intro {
     height: 100vh;
@@ -133,7 +166,11 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom right, #ffe680, #3f51b5);
+    /* background: linear-gradient(to bottom right, #ffe680, #3f51b5); */
+    background-image: url('images/paper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #intro h1 {
@@ -167,41 +204,23 @@ section {
     margin-top: 100px;
 }
 
-section h1 {
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: auto;
+.intro-img-container {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+    display: inline-block;
 }
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #1e3a8a;
-}
-
-section p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #e5e7eb;
-    color: #555;
-    font-size: 0.9rem;
-}
-
-/* intro styles*/
 
 .intro-img {
-    width: 1000px;
-    max-width: 1000px;
+    width: 800px;
     height: auto;
-    margin-bottom: 0px;
     display: block;
-    animation: bounceInUp 1s ease-out forwards;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.intro-img:hover {
+    transform: scale(1.1);
 }
 
 .hanging-icons {
@@ -221,23 +240,10 @@ footer {
     flex-direction: column;
     align-items: center;
     transform: translateY(-800px);
-    /* make sure it starts above even if no animation triggers */
     animation: hangDown 2s ease-out forwards;
     pointer-events: auto;
     animation-delay: 2s;
 }
-
-/* .hanger:nth-child(2) {
-    animation-delay: 2.4s;
-}
-
-.hanger:nth-child(3) {
-    animation-delay: 2.6s;
-}
-
-.hanger:nth-child(4) {
-    animation-delay: 2.8s;
-} */
 
 .rope {
     width: 6px;
@@ -263,7 +269,7 @@ footer {
 
 @keyframes hangDown {
     0% {
-        transform: translateY(-500px);
+        transform: translateY(-800px);
         /* start far above */
     }
 
