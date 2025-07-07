@@ -10,7 +10,10 @@
 }
 
 html {
+    height: 100%;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    overflow-y: scroll
 }
 
 @keyframes floatUp {
@@ -99,6 +102,7 @@ nav ul {
     justify-content: center;
     gap: 40px;
     list-style: none;
+    font-family: 'Playfair Display', serif;
     padding: 0;
 }
 
@@ -122,6 +126,8 @@ Section styles
 section {
     padding: 80px 20px;
     max-width: 900px;
+    scroll-snap-align: start;
+    min-height: 100vh;
     margin: auto;
 }
 
@@ -168,10 +174,9 @@ intro styles
     text-align: center;
     background-image: url('images/paper.jpg');
     background-size: cover;
-    /* Makes sure it fills the entire section */
     background-position: center;
-    /* Keeps it centered */
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #intro h1 {
@@ -248,8 +253,8 @@ intro styles
 
 .rope {
     width: 6px;
-    height: 500px;
-    background-image: url('images/rope.png');
+    height: 550px;
+    background-image: url('images/rope2.png');
     background-repeat: repeat-y;
     background-size: contain;
     margin-top: -20px;
@@ -260,7 +265,7 @@ intro styles
     width: 300px;
     height: 300px;
     cursor: pointer;
-    margin-top: -50px;
+    margin-top: -80px;
     transition: transform 0.3s ease;
 }
 
@@ -271,12 +276,10 @@ intro styles
 @keyframes hangDown {
     0% {
         transform: translateY(-800px);
-        /* start far above */
     }
 
     100% {
         transform: translateY(0);
-        /* drop down to resting position */
     }
 }
 
@@ -289,7 +292,7 @@ intro styles
 #briefcase {
     left: 20%;
     position: absolute;
-    top: -300px;
+    top: -250px;
 }
 
 #clipboard {
@@ -301,5 +304,28 @@ intro styles
 #envelope {
     right: 20%;
     position: absolute;
-    top: -300px;
+    top: -250px;
+}
+
+/* About me section */
+
+#about {
+    height: 100vh;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('images/lined.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease;
+}
+
+#about.show-background {
+    background-image: url('images/lined.jpg');
+    /* changes when scrolled in */
 }
