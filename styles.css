@@ -33,15 +33,17 @@ html {
     }
 
     60% {
-        opacity: 1;
+        opacity: 0.6;
         transform: translateY(-20px) scale(1.05);
     }
 
     80% {
+        opacity: 0.8;
         transform: translateY(10px) scale(0.98);
     }
 
     100% {
+        opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
@@ -115,7 +117,7 @@ body {
 
 header {
     background-color: transparent;
-    color: white;
+    color: #1e3a8a;
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -140,7 +142,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #1e3a8a;
     font-weight: 500;
     padding: 8px 12px;
     transition: background 0.3s, color 0.3s;
@@ -204,8 +206,85 @@ intro styles
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
+
+
+@keyframes tada {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    10%,
+    20% {
+        transform: scale(0.9) rotate(-3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 #intro h1 {
     font-family: 'Playfair Display', serif;
@@ -214,35 +293,62 @@ intro styles
     color: #1e3a8a;
     text-align: center;
     opacity: 0;
-    animation: zoomInDown 0.5s ease-out forwards;
+    animation: zoomInDown 0.3s ease-out forwards, tada 1s ease 0.5s;
     margin-bottom: -100px;
+    text-shadow:
+        1px 1px 0 #ddd,
+        2px 2px 0 #ccc,
+        3px 3px 0 #bbb,
+        4px 4px 0 #aaa;
 }
 
 #intro h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #1e3a8a;
     margin-top: 0px;
     opacity: 0;
-    animation: fadeInUp 2.5s ease-out forwards;
-    animation-delay: 1s;
+    animation: bounceInUp 1s ease-out forwards;
+    animation-delay: 1.2s;
     margin-bottom: -100px;
+    text-shadow:
+        1px 1px 0 #ddd,
+        2px 2px 0 #ccc,
+        3px 3px 0 #bbb,
+        4px 4px 0 #aaa;
 }
 
 #intro p {
     opacity: 0;
     margin-top: 0px;
     font-family: 'Times New Roman', Times, serif;
-    animation: fadeInUp 3s ease-in forwards;
-    animation-delay: 5s;
+    animation: fadeInUp 1.5s ease-in forwards;
+    animation-delay: 2.3s;
     margin-top: 100px;
 }
 
-.intro-img-container {
-    animation: fadeInUp 2.5s ease-out forwards;
-    animation-delay: 1s;
-    opacity: 0;
-    display: inline-block;
+#intro h1.visible {
+    animation: slideInRight 1s ease forwards;
+}
+
+#intro h2.visible {
+    animation: slideInLeft 1s ease forwards;
+}
+
+#intro p.visible {
+    animation: fadeInUp 1s ease forwards;
+}
+
+#intro h1.hidden {
+    animation: slideOutLeft 1s ease forwards;
+}
+
+#intro h2.hidden {
+    animation: slideOutRight 1s ease forwards;
+}
+
+#intro p.hidden {
+    animation: fadeOut 1s ease forwards;
 }
 
 .intro-img {
@@ -250,16 +356,26 @@ intro styles
     height: auto;
     display: block;
     cursor: pointer;
+    opacity: 1;
     transition: transform 0.3s ease;
 }
 
+.intro-img-container {
+    opacity: 0;
+}
+
+.intro-img-container.first-visible {
+    animation: bounceInUp 1s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
 .intro-img-container.visible {
-    animation: fadeIn 2s ease forwards;
+    animation: fadeIn 1.5s ease forwards;
     opacity: 1;
 }
 
 .intro-img-container.hidden {
-    animation: fadeOut 2s ease forwards;
+    animation: fadeOut 1.5s ease forwards;
     opacity: 0;
 }
 
@@ -285,18 +401,22 @@ intro styles
     align-items: center;
     transform: translateY(-1500px);
     opacity: 0;
-    transition: transform 4s ease, opacity 4s ease;
     pointer-events: auto;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.hanger.first-visible {
+    animation: hangDown 2s ease forwards;
+    animation-delay: 2s;
 }
 
 .hanger.visible {
-    animation: hangDown 2s ease forwards;
+    transform: translateY(-200px);
     opacity: 1;
 }
 
-/* When hidden, icons move up and fade */
 .hanger.hidden {
-    animation: hangUp 2s ease forwards;
+    transform: translateY(-1500px);
     opacity: 0;
 }
 
@@ -311,6 +431,19 @@ intro styles
         opacity: 0;
     }
 }
+
+@keyframes hangDown {
+    0% {
+        transform: translateY(-1500px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-200px);
+        opacity: 1;
+    }
+}
+
 
 .rope {
     width: 6px;
@@ -331,18 +464,9 @@ intro styles
 }
 
 .icon:hover {
-    transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1) rotate(5deg);
 }
 
-@keyframes hangDown {
-    0% {
-        transform: translateY(-1500px);
-    }
-
-    100% {
-        transform: translateY(-200px);
-    }
-}
 
 #camera {
     left: 10%;
