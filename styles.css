@@ -198,6 +198,34 @@ footer {
     text-align: center;
 }
 
+footer ul {
+    display: flex;
+    justify-content: center;
+    /* evenly center the icons */
+    gap: 100px;
+    /* space between icons */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    width: 35px;
+    /* or however big you want the icons */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
 /* 
 intro styles
 */
