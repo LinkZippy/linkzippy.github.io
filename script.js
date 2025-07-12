@@ -38,19 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 introImgContainer.classList.remove("hidden", "visible", "first-visible");
                 introImgContainer.offsetHeight;
 
-                h1.classList.remove("hidden");
-                h2.classList.remove("hidden");
-                p.classList.remove("hidden");
+                h1.classList.remove("hidden", "visible", "first-visible");
+                h2.classList.remove("hidden", "visible", "first-visible");
+                p.classList.remove("hidden", "visible", "first-visible");
                 h1.offsetHeight; h2.offsetHeight; p.offsetHeight;
-                h1.classList.add("visible");
-                h2.classList.add("visible");
-                p.classList.add("visible");
+
+                if (firstTime) {
+                    h1.classList.add("first-visible");
+                    h2.classList.add("first-visible");
+                    p.classList.add("first-visible");
+                } else if (wasHidden) {
+                    h1.classList.add("visible");
+                    h2.classList.add("visible");
+                    p.classList.add("visible");
+                }
 
                 if (firstTime) {
                     introImgContainer.classList.add("first-visible");
-                    setTimeout(() => {
-                        introImgContainer.classList.add("first-visible");
-                    }, 4000);
                 } else if (wasHidden) {
                     introImgContainer.classList.add("visible");
                 }
@@ -67,10 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 introImgContainer.offsetHeight;
                 introImgContainer.classList.add("hidden");
 
-                h1.classList.remove("visible");
-                h2.classList.remove("visible");
-                p.classList.remove("visible");
+                h1.classList.remove("visible", "first-visible");
+                h2.classList.remove("visible", "first-visible");
+                p.classList.remove("visible", "first-visible");
+
                 h1.offsetHeight; h2.offsetHeight; p.offsetHeight;
+
                 h1.classList.add("hidden");
                 h2.classList.add("hidden");
                 p.classList.add("hidden");
