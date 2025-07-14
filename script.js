@@ -86,23 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 wasHidden = true;
             }
         });
-    }, { threshold: 0.8 });
+    }, { threshold: 0.5 });
 
     observer.observe(introSection);
 
     const aboutObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                abh2.classList.remove("hidden");
+                abh2.offsetHeight;
+                abh2.classList.add("visible");
+
                 abp.classList.remove("hidden");
                 abp.offsetHeight;
                 abp.classList.add("visible");
             } else {
+                abh2.classList.remove("visible");
+                abh2.offsetHeight;
+                abh2.classList.add("hidden");
+
                 abp.classList.remove("visible");
                 abp.offsetHeight;
                 abp.classList.add("hidden");
             }
         });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.7 });
 
     aboutObserver.observe(aboutSection);
 });
