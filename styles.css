@@ -105,7 +105,7 @@ body {
         linear-gradient(to bottom,
             #ffffff 0%,
             #d5F0FF 20%,
-            #fbc2eb 40%,
+            #F5FCA7 40%,
             #a18cd1 60%,
             #fbc2eb 80%,
             #d5F0FF 100%);
@@ -188,7 +188,7 @@ section p {
 /* Footer */
 footer {
     background-color: transparent;
-    padding: 20px 0;
+    padding: 20px 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -201,9 +201,7 @@ footer {
 footer ul {
     display: flex;
     justify-content: center;
-    /* evenly center the icons */
     gap: 100px;
-    /* space between icons */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -216,7 +214,7 @@ footer li {
 
 footer img {
     width: 35px;
-    /* or however big you want the icons */
+
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -540,12 +538,25 @@ intro styles
 }
 
 #about p {
-    font-size: 2em;
+    font-size: 1.5em;
     max-width: 2000px;
     padding-top: 75px;
     padding-left: 500px;
     padding-right: 200px;
     padding-bottom: 320px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#about p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about p.hidden {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 /* Experiences section */
@@ -585,7 +596,6 @@ intro styles
     object-fit: cover;
 }
 
-/* Optional hover effect to tilt the image */
 .circle-frame:hover {
     transform: rotateX(5deg) rotateY(5deg);
     box-shadow:

@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const h1 = document.querySelector("#intro h1");
     const h2 = document.querySelector("#intro h2");
     const p = document.querySelector("#intro p")
+    //about me section text elements
+    const aboutSection = document.getElementById("about");
+    const abh2 = document.querySelector("#about h2");
+    const abp = document.querySelector("#about p");
 
     let firstTime = true;
     let wasHidden = true;
@@ -74,9 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 h1.classList.remove("visible", "first-visible");
                 h2.classList.remove("visible", "first-visible");
                 p.classList.remove("visible", "first-visible");
-
                 h1.offsetHeight; h2.offsetHeight; p.offsetHeight;
-
                 h1.classList.add("hidden");
                 h2.classList.add("hidden");
                 p.classList.add("hidden");
@@ -87,4 +89,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.8 });
 
     observer.observe(introSection);
+
+    const aboutObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                abp.classList.remove("hidden");
+                abp.offsetHeight;
+                abp.classList.add("visible");
+            } else {
+                abp.classList.remove("visible");
+                abp.offsetHeight;
+                abp.classList.add("hidden");
+            }
+        });
+    }, { threshold: 0.4 });
+
+    aboutObserver.observe(aboutSection);
 });
