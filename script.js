@@ -1,5 +1,8 @@
 window.addEventListener('load', () => {
-    document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
+    document.querySelector(".horizontal-scroll").scrollTo({
+        left: document.getElementById("intro").offsetLeft,
+        // behavior: "smooth"
+    });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -93,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                aboutSection.classList.add("visible");
+
                 abh2.classList.remove("hidden");
                 abh2.offsetHeight;
                 abh2.classList.add("visible");
@@ -101,6 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.offsetHeight;
                 abp.classList.add("visible");
             } else {
+                aboutSection.classList.
+                    remove("visible");
+
                 abh2.classList.remove("visible");
                 abh2.offsetHeight;
                 abh2.classList.add("hidden");
@@ -110,7 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.classList.add("hidden");
             }
         });
-    }, { threshold: 0.7 });
+    }, { threshold: 0.5 });
 
     aboutObserver.observe(aboutSection);
+
+    const horizontalScroll = document.querySelector('.horizontal-scroll');
+
+    horizontalScroll.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            horizontalScroll.scrollBy({
+                left: e.deltaY,
+            });
+        }
+    }, { passive: false });
 });
