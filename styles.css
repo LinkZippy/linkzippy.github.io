@@ -146,10 +146,9 @@ nav ul {
     font-weight: 400;
     font-style: normal;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 40px;
     list-style: none;
-    padding-right: 30px;
 }
 
 nav a {
@@ -163,6 +162,12 @@ nav a {
 nav a:hover {
     background-color: white;
     color: #1e3a8a;
+    border-radius: 5px;
+}
+
+nav a.active {
+    background-color: #1e3a8a;
+    color: white;
     border-radius: 5px;
 }
 

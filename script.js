@@ -132,4 +132,27 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }, { passive: false });
+
+    const navLinks = document.querySelectorAll("nav a");
+    const allSections = document.querySelectorAll(".horizontal-scroll > section");
+
+    function updateActiveNav() {
+        const scrollLeft = horizontalScroll.scrollLeft;
+        const sectionWidth = window.innerWidth;
+        const index = Math.round(scrollLeft / sectionWidth);
+
+        const activeSection = allSections[index];
+        const activeId = activeSection ? activeSection.id : null;
+
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute("href");
+            link.classList.toggle("active", linkHref === `#${activeId}`);
+        });
+    }
+
+    // Run on scroll
+    document.querySelector('.horizontal-scroll').addEventListener("scroll", updateActiveNav);
+
+    // Also run once on page load (to sync from the start)
+    updateActiveNav();
 });
