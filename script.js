@@ -216,4 +216,53 @@ document.addEventListener("DOMContentLoaded", () => {
             cloudContainer.appendChild(img);
         }
     }
+
+    const words = ["coder", "photographer", "developer", "storyteller", "listener"];
+    let current = 0;
+    const swapWord = document.getElementById("swap-word");
+
+    setInterval(() => {
+        current = (current + 1) % words.length;
+        swapWord.textContent = words[current];
+    }, 1300);
+
+    const years = [2025, 2023, 2020, 2017, 2010]; // add your years
+    const data = {
+        2025: { text: "Started college at Dartmouth!", image: "images/dartmouth.jpg" },
+        2023: { text: "Graduated high school.", image: "images/dartmouth.jpg" },
+        2020: { text: "Got really into coding.", image: "images/dartmouth.jpg" },
+        2017: { text: "Joined a music group.", image: "images/dartmouth.jpg" },
+        2010: { text: "Wore a cape every day.", image: "images/dartmouth.jpg" },
+    };
+
+    const dial = document.getElementById("year-dial");
+    const text = document.getElementById("year-text");
+    const img = document.getElementById("year-image");
+
+    let currIndex = 0;
+
+    function renderDial() {
+        dial.innerHTML = "";
+        years.forEach((year, i) => {
+            const div = document.createElement("div");
+            div.classList.add("year-item");
+            div.textContent = year;
+            div.style.fontSize = `${100 - Math.abs(i - currIndex) * 20}%`;
+            div.addEventListener("click", () => {
+                currentIndex = i;
+                renderDial();
+                updateContent(year);
+            });
+            dial.appendChild(div);
+        });
+    }
+
+    function updateContent(year) {
+        text.textContent = data[year].text;
+        img.src = data[year].image;
+    }
+
+    renderDial();
+    updateContent(years[currentIndex]);
+
 });

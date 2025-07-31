@@ -71,7 +71,6 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 80px;
-    /* keep consistent */
     list-style: none;
 }
 
@@ -164,7 +163,6 @@ nav a.active {
     margin-left: 40px;
     height: 2px;
     background-color: #ccc;
-    /* slightly darker */
     z-index: -1000;
 }
 
@@ -191,11 +189,6 @@ section h2 {
     font-family: "Tai Heritage Pro", serif;
     font-weight: 400;
     font-style: normal;
-}
-
-section p {
-    margin-bottom: 10px;
-    text-indent: 2em;
 }
 
 /* Footer */
@@ -397,9 +390,8 @@ intro styles
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: left;
+    justify-content: left;
     overflow: hidden;
 }
 
@@ -410,7 +402,6 @@ intro styles
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('images/dartmouth.jpg') center center / cover no-repeat;
     opacity: 0;
     transition: opacity 0.75s ease;
     z-index: 0;
@@ -420,16 +411,24 @@ intro styles
     opacity: 0.08;
 }
 
+#swap-word {
+    transition: opacity 0.3s ease;
+}
 
 #about h2 {
-    font-size: 5em;
-    padding-top: 150px;
+    justify-content: left;
+    text-align: left;
+    font-size: 4em;
+    max-width: 400px;
+    margin-top: 100px;
+    margin-left: 170px;
     opacity: 0;
     text-shadow:
         1px 1px 0 #ddd,
         2px 2px 0 #ccc,
         3px 3px 0 #bbb,
         4px 4px 0 #aaa;
+    position: relative;
 }
 
 #about h2.visible {
@@ -437,17 +436,28 @@ intro styles
 }
 
 #about h2.hidden {
-    animation: slideOutLeft 0.75s ease forwards;
+    animation: slideOutRight 0.75s ease forwards;
+}
+
+#about h2::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: -25px;
+    height: 72%;
+    width: 6px;
+    margin-top: 50px;
+    margin-left: 40px;
+    background-color: #1e3a8a;
 }
 
 #about p {
     font-size: 1.5em;
-    max-width: 500px;
-    padding-top: 75px;
-    padding-bottom: 320px;
+    max-width: 650px;
+    margin-left: 150px;
+    padding-top: 40px;
     opacity: 0;
     text-align: justify;
-
 }
 
 #about p.visible {
@@ -458,9 +468,63 @@ intro styles
     animation: fadeOut 1s ease forwards;
 }
 
+/* About timeline */
+
+#timeline-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 100vh;
+    padding: 0 60px;
+}
+
+#year-dial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-family: "Playfair Display", serif;
+    color: #1e3a8a;
+    cursor: pointer;
+}
+
+.year-item {
+    transition: font-size 0.3s, transform 0.3s;
+    opacity: 0.7;
+}
+
+.year-item:nth-child(n+1):nth-child(-n+1) {
+    opacity: 1;
+}
+
+#year-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+}
+
+#year-content img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#year-content p {
+    font-size: 1.2em;
+    max-width: 500px;
+}
+
 /* Experiences section */
 
-#experiences {}
+#experiences {
+    background: url('images/dartmouth.jpg') center center / cover no-repeat;
+}
 
 #passion {
     margin-left: 200px
@@ -507,24 +571,24 @@ intro styles
 
 @keyframes hangUp {
     0% {
-        transform: translateY(-200px);
+        transform: translateY(20vh);
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-1500px);
+        transform: translateY(-10vh);
         opacity: 0;
     }
 }
 
 @keyframes hangDown {
     0% {
-        transform: translateY(-1500px);
+        transform: translateY(-10vh);
         opacity: 0;
     }
 
     100% {
-        transform: translateY(-200px);
+        transform: translateY(5vh);
         opacity: 1;
     }
 }
