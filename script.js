@@ -55,6 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     h1.classList.add("first-visible");
                     h2.classList.add("first-visible");
                     p.classList.add("first-visible");
+
+                    setTimeout(() => {
+                        generateClouds();
+                        document.querySelector('header').classList.add('fadeIn');
+                        document.querySelector('.clouds').classList.add('fadeIn');
+                        document.querySelector('footer').classList.add('fadeIn');
+                    }, 1500);
+
                 } else if (wasHidden) {
                     h1.classList.add("visible");
                     h2.classList.add("visible");
@@ -168,4 +176,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector('.horizontal-scroll').addEventListener('scroll', updateDotsAndNav);
     window.addEventListener('load', updateDotsAndNav);
+
+    const cloudContainer = document.querySelector('.clouds');
+    const cloudImages = [
+        'images/cloud1.png',
+        'images/cloud2.png',
+        'images/cloud3.png',
+        'images/cloud4.png'
+    ];
+    function generateClouds() {
+        const numClouds = 6;
+
+
+        for (let i = 0; i < numClouds; i++) {
+            const img = document.createElement('img');
+            img.src = cloudImages[Math.floor(Math.random() * cloudImages.length)];
+            img.classList.add('cloud');
+
+            // Random vertical position (top 0–50%)
+            const top = Math.random() * 10;
+            img.style.top = `${top}%`;
+
+            // Random horizontal start position (left: 0vw to 100vw)
+            const left = -30 + Math.random() * 130;
+            img.style.left = `${left}vw`;
+
+            const width = 250 + Math.random() * 100;
+            img.style.width = `${width}px`;
+
+            // Animation
+            const duration = 40 + Math.random() * 40; // 40–80s
+            img.style.animationDuration = `${duration}s`;
+            img.style.animationDelay = `0s`; // all start immediately
+
+            // Random scale
+            const scale = 0.9 + Math.random() * 0.3;
+            img.style.transform = `scale(${scale})`;
+
+            cloudContainer.appendChild(img);
+        }
+    }
 });
