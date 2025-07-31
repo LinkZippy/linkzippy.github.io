@@ -9,8 +9,25 @@
 }
 
 html {
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
     height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    overscroll-behavior-x: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #333;
+    line-height: 1.6;
+    background: url('images/bg2.png');
+    background-color: #ffffff;
+    background-repeat: repeat, no-repeat;
+    background-position: top, top;
 }
 
 .horizontal-scroll {
@@ -18,8 +35,9 @@ html {
     flex-direction: row;
     height: 100vh;
     width: 100vw;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .horizontal-scroll section {
@@ -112,26 +130,14 @@ html {
     }
 }
 
-body {
-    overflow: hidden;
-    color: #333;
-    line-height: 1.6;
-    background: url('images/bg2.png');
-    background-color: #ffffff;
-    background-repeat: repeat, no-repeat;
-    /* background-size: 200px 200px, 100% 500vw; */
-    background-position: top, top;
-}
-
 header {
     background-color: transparent;
     color: #1e3a8a;
-    padding: 20px 0;
+    padding-top: 70px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -144,19 +150,21 @@ header h1 {
 nav ul {
     font-family: "Tai Heritage Pro", serif;
     font-weight: 400;
-    font-style: normal;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 80px;
+    /* keep consistent */
     list-style: none;
+    padding-top: 100px;
 }
+
 
 nav a {
     text-decoration: none;
     color: #1e3a8a;
     font-weight: 500;
     padding: 8px 12px;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.2s, color 0.2s;
 }
 
 nav a:hover {
@@ -169,6 +177,78 @@ nav a.active {
     background-color: #1e3a8a;
     color: white;
     border-radius: 5px;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    padding-top: 100px;
+    margin: 0;
+}
+
+.nav-links li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links a {
+    font-family: "Tai Heritage Pro", serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #1e3a8a;
+    padding: 8px 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: white;
+    color: #1e3a8a;
+    border-radius: 5px;
+}
+
+.nav-links a.active {
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Dot directly beneath nav link */
+.nav-links .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links .dot.active {
+    background-color: #1e3a8a;
+}
+
+/* Line connecting dots */
+.nav-links::before {
+    content: "";
+    position: absolute;
+    width: 710px;
+    margin-top: 50px;
+    margin-left: 40px;
+    height: 2px;
+    background-color: #ccc;
+    /* slightly darker */
+    z-index: -1000;
 }
 
 /* Section styles */
@@ -330,10 +410,10 @@ intro styles
 
 #intro h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 8rem;
+    font-size: 10rem;
     color: #1e3a8a;
-    /* text-align: center; */
     opacity: 0;
+    margin-top: 300px;
     margin-bottom: -100px;
     text-shadow:
         1px 1px 0 #ddd,
@@ -346,7 +426,6 @@ intro styles
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
     color: #1e3a8a;
-    margin-top: 0px;
     opacity: 0;
     margin-bottom: -100px;
     text-shadow:
@@ -403,17 +482,18 @@ intro styles
 }
 
 .intro-img {
-    margin-top: 100px;
-    width: 800px;
+    width: 700px;
     height: auto;
     display: block;
     cursor: pointer;
     opacity: 1;
     transition: transform 0.3s ease;
+    margin-bottom: 200px;
 }
 
 .intro-img-container {
     opacity: 0;
+
 }
 
 .intro-img-container.first-visible {

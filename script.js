@@ -1,11 +1,12 @@
 window.addEventListener('load', () => {
     document.querySelector(".horizontal-scroll").scrollTo({
         left: document.getElementById("intro").offsetLeft,
-        // behavior: "smooth"
+        behavior: "smooth"
     });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
     //intro section
     const introSection = document.getElementById("intro");
     //hangers from intro section
@@ -124,35 +125,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const horizontalScroll = document.querySelector('.horizontal-scroll');
 
+    let currentIndex = 0;
+    let scrollLocked = false;
+    let lastScrollTime = 0;
+
     horizontalScroll.addEventListener('wheel', (e) => {
-        if (e.deltaY !== 0) {
-            e.preventDefault();
-            horizontalScroll.scrollBy({
-                left: e.deltaY,
-            });
-        }
+        e.preventDefault();
+
+        const now = Date.now();
+
+        // If locked or scrolled recently, ignore
+        if (scrollLocked || now - lastScrollTime < 600) return;
+
+        // Only respond to significant delta
+        const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+        if (Math.abs(delta) < 30) return; // ignore small trackpad jitters
+
+        const direction = delta > 0 ? 1 : -1;
+
+        currentIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
+        scrollLocked = true;
+        lastScrollTime = now;
+
+        horizontalScroll.scrollTo({
+            left: currentIndex * window.innerWidth,
+            behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+            scrollLocked = false;
+        }, 700); // match scroll animation
     }, { passive: false });
 
-    const navLinks = document.querySelectorAll("nav a");
-    const allSections = document.querySelectorAll(".horizontal-scroll > section");
+    // const sections = document.querySelectorAll('section');
+    const dots = document.querySelectorAll('.dot');
 
-    function updateActiveNav() {
-        const scrollLeft = horizontalScroll.scrollLeft;
-        const sectionWidth = window.innerWidth;
-        const index = Math.round(scrollLeft / sectionWidth);
+    function updateDotsAndNav() {
+        const scrollLeft = document.querySelector('.horizontal-scroll').scrollLeft;
+        const index = Math.round(scrollLeft / window.innerWidth);
 
-        const activeSection = allSections[index];
-        const activeId = activeSection ? activeSection.id : null;
-
-        navLinks.forEach(link => {
-            const linkHref = link.getAttribute("href");
-            link.classList.toggle("active", linkHref === `#${activeId}`);
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
         });
     }
 
-    // Run on scroll
-    document.querySelector('.horizontal-scroll').addEventListener("scroll", updateActiveNav);
-
-    // Also run once on page load (to sync from the start)
-    updateActiveNav();
+    document.querySelector('.horizontal-scroll').addEventListener('scroll', updateDotsAndNav);
+    window.addEventListener('load', updateDotsAndNav);
 });
