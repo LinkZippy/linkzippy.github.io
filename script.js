@@ -134,12 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const now = Date.now();
 
-        // If locked or scrolled recently, ignore
         if (scrollLocked || now - lastScrollTime < 600) return;
 
-        // Only respond to significant delta
         const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-        if (Math.abs(delta) < 30) return; // ignore small trackpad jitters
+        if (Math.abs(delta) < 30) return;
 
         const direction = delta > 0 ? 1 : -1;
 
@@ -154,10 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             scrollLocked = false;
-        }, 700); // match scroll animation
+        }, 700);
     }, { passive: false });
 
-    // const sections = document.querySelectorAll('section');
     const dots = document.querySelectorAll('.dot');
 
     function updateDotsAndNav() {
