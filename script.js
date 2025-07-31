@@ -1,16 +1,31 @@
+let cloudsGenerated = false;
+
 window.addEventListener('load', () => {
     document.querySelector(".horizontal-scroll").scrollTo({
         left: document.getElementById("intro").offsetLeft,
         behavior: "smooth"
     });
+
+    const introSection = document.getElementById("intro");
+    const bounding = introSection.getBoundingClientRect();
+    const partiallyVisible = bounding.bottom > 0 && bounding.top < window.innerHeight;
+
+    if (partiallyVisible) {
+        // If intro is already in view on load, manually trigger intro effects
+        if (!cloudsGenerated) {
+            generateClouds();
+            cloudsGenerated = true;
+        }
+        document.querySelector('header').classList.add('fadeIn');
+        document.querySelector('.clouds').classList.add('fadeIn');
+        document.querySelector('footer').classList.add('fadeIn');
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll('section');
     //intro section
     const introSection = document.getElementById("intro");
-    //hangers from intro section
-    const hangers = document.querySelectorAll(".hanger");
     //me2.png image
     const introImgContainer = document.querySelector(".intro-img-container");
     //intro section text elements
@@ -28,24 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                hangers.forEach(hanger => {
-                    hanger.classList.remove("hidden", "visible", "first-visible");
-                    hanger.offsetHeight;
-
-                    if (firstTime) {
-                        hanger.classList.add("first-visible");
-                        setTimeout(() => {
-                            hanger.classList.remove("first-visible");
-                            hanger.classList.add("visible");
-                        }, 4000);
-                    } else {
-                        hanger.classList.add("visible");
-                    }
-                });
-
-                introImgContainer.classList.remove("hidden", "visible", "first-visible");
-                introImgContainer.offsetHeight;
-
                 h1.classList.remove("hidden", "visible", "first-visible");
                 h2.classList.remove("hidden", "visible", "first-visible");
                 p.classList.remove("hidden", "visible", "first-visible");
@@ -57,7 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     p.classList.add("first-visible");
 
                     setTimeout(() => {
-                        generateClouds();
+                        if (!cloudsGenerated) {
+                            generateClouds();
+                            cloudsGenerated = true;
+                        }
                         document.querySelector('header').classList.add('fadeIn');
                         document.querySelector('.clouds').classList.add('fadeIn');
                         document.querySelector('footer').classList.add('fadeIn');
@@ -67,7 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     h1.classList.add("visible");
                     h2.classList.add("visible");
                     p.classList.add("visible");
+
+                    if (!cloudsGenerated) {
+                        generateClouds();
+                        cloudsGenerated = true;
+                    }
+                    document.querySelector('.clouds').classList.add('fadeIn');
+                    document.querySelector('header').classList.add('fadeIn');
+                    document.querySelector('footer').classList.add('fadeIn');
                 }
+
+                introImgContainer.classList.remove("hidden", "visible", "first-visible");
+                introImgContainer.offsetHeight;
 
                 if (firstTime) {
                     introImgContainer.classList.add("first-visible");
@@ -77,12 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 firstTime = false;
                 wasHidden = false;
+
             } else {
-                hangers.forEach(hanger => {
-                    hanger.classList.remove("visible", "first-visible");
-                    hanger.offsetHeight;
-                    hanger.classList.add("hidden");
-                });
                 introImgContainer.classList.remove("visible", "first-visible");
                 introImgContainer.offsetHeight;
                 introImgContainer.classList.add("hidden");
@@ -94,6 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 h1.classList.add("hidden");
                 h2.classList.add("hidden");
                 p.classList.add("hidden");
+
+                // 👇 Remove clouds when #intro is out of view
+                document.querySelector('.clouds').innerHTML = '';
+                cloudsGenerated = false;
 
                 wasHidden = true;
             }
@@ -185,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'images/cloud4.png'
     ];
     function generateClouds() {
-        const numClouds = 6;
+        const numClouds = window.innerWidth > 768 ? 4 : 2;
 
 
         for (let i = 0; i < numClouds; i++) {
@@ -224,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         current = (current + 1) % words.length;
         swapWord.textContent = words[current];
-    }, 1300);
+    }, 2500);
 
     const years = [2025, 2023, 2020, 2017, 2010]; // add your years
     const data = {
@@ -249,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.textContent = year;
             div.style.fontSize = `${100 - Math.abs(i - currIndex) * 20}%`;
             div.addEventListener("click", () => {
-                currentIndex = i;
+                currIndex = i;
                 renderDial();
                 updateContent(year);
             });
@@ -263,6 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     renderDial();
-    updateContent(years[currentIndex]);
+    updateContent(years[currIndex]);
 
 });

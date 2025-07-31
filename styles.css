@@ -351,6 +351,7 @@ intro styles
 /* CLOUDS!!! */
 
 .fadeIn {
+    opacity: 1;
     animation: fadeIn 1.5s ease forwards;
 }
 
@@ -452,7 +453,7 @@ intro styles
 }
 
 #about p {
-    font-size: 1.5em;
+    font-size: 1.3em;
     max-width: 650px;
     margin-left: 150px;
     padding-top: 40px;
@@ -470,12 +471,27 @@ intro styles
 
 /* About timeline */
 
-#timeline-container {
+.about-content {
     display: flex;
-    justify-content: right;
-    align-items: right;
-    height: 100vh;
-    padding: 0 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 100px;
+    gap: 60px;
+}
+
+#about-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+#timeline-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 80vh;
+
 }
 
 #year-dial {
@@ -522,9 +538,7 @@ intro styles
 
 /* Experiences section */
 
-#experiences {
-    background: url('images/dartmouth.jpg') center center / cover no-repeat;
-}
+#experiences {}
 
 #passion {
     margin-left: 200px
@@ -750,90 +764,3 @@ intro styles
         transform: translateY(20px);
     }
 }
-
-/* Trash section */
-
-/* .hanging-icons {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.hanger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateY(-1500px);
-    opacity: 0;
-    pointer-events: auto;
-    transition: transform 1s ease, opacity 1s ease;
-}
-
-.hanger.first-visible {
-    animation: hangDown 2s ease forwards;
-    animation-delay: 2s;
-}
-
-.hanger.visible {
-    transform: translateY(-200px);
-    opacity: 1;
-}
-
-.hanger.hidden {
-    transform: translateY(-1500px);
-    opacity: 0;
-}
-
-
-.rope {
-    width: 6px;
-    height: 700px;
-    background-image: url('images/rope2.png');
-    background-repeat: repeat-y;
-    background-size: contain;
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
-
-.icon {
-    width: 300px;
-    height: 300px;
-    cursor: pointer;
-    margin-top: -80px;
-    transition: transform 0.3s ease;
-}
-
-.icon:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
-
-#camera {
-    left: 10%;
-    position: absolute;
-    top: 70px;
-}
-
-#briefcase {
-    left: 20%;
-    position: absolute;
-    top: -250px;
-}
-
-#clipboard {
-    right: 10%;
-    position: absolute;
-    top: 70px;
-}
-
-#envelope {
-    right: 20%;
-    position: absolute;
-    top: -250px;
-} */
