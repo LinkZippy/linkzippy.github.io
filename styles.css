@@ -477,11 +477,32 @@ intro styles
     align-items: flex-start;
     padding: 0 100px;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
 #about-left {
     flex: 1;
     max-width: 50%;
+}
+
+#timeline-container {
+    flex: 1;
+    position: relative;
+    max-width: 50%;
+    height: auto;
+    display: block;
+    gap: 20px;
+    flex-direction: column;
+}
+
+#timeline-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    /* optional, for rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* optional, for subtle shadows */
 }
 
 /* Experiences section */
