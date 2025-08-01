@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutSection = document.getElementById("about");
     const abh2 = document.querySelector("#about h2");
     const abp = document.querySelector("#about p");
+    //timeline elements
+    const timeline1 = document.querySelector(".timeline1");
+    const timeline2 = document.querySelector(".timeline2");
+    const timeline3 = document.querySelector(".timeline3");
+    const timeline4 = document.querySelector(".timeline4");
 
     let firstTime = true;
     let wasHidden = true;
@@ -126,10 +131,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.offsetHeight;
                 abp.classList.add("visible");
 
-                document.querySelector('.timeline1')?.classList.add('visible');
-                document.querySelector('.timeline2')?.classList.add('visible');
-                document.querySelector('.timeline3')?.classList.add('visible');
-                document.querySelector('.timeline4')?.classList.add('visible');
+                timeline1.classList.remove('hidden');
+                timeline1.offsetHeight;
+                timeline1.classList.add('visible');
+
+                timeline2.classList.remove('hidden');
+                timeline2.offsetHeight;
+                timeline2.classList.add('visible');
+
+                timeline3.classList.remove('hidden');
+                timeline3.offsetHeight;
+                timeline3.classList.add('visible');
+
+                timeline4.classList.remove('hidden');
+                timeline4.offsetHeight;
+                timeline4.classList.add('visible');
+
             } else {
                 aboutSection.classList.
                     remove("visible");
@@ -142,10 +159,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.offsetHeight;
                 abp.classList.add("hidden");
 
-                document.querySelector('.timeline1')?.classList.remove('visible');
-                document.querySelector('.timeline2')?.classList.remove('visible');
-                document.querySelector('.timeline3')?.classList.remove('visible');
-                document.querySelector('.timeline4')?.classList.remove('visible');
+                timeline1.classList.remove('visible');
+                timeline1.offsetHeight;
+                timeline1.classList.add('hidden');
+
+                timeline2.classList.remove('visible');
+                timeline2.offsetHeight;
+                timeline2.classList.add('hidden');
+
+                timeline3.classList.remove('visible');
+                timeline3.offsetHeight;
+                timeline3.classList.add('hidden');
+
+                timeline4.classList.remove('visible');
+                timeline4.offsetHeight;
+                timeline4.classList.add('hidden');
             }
         });
     }, { threshold: 0.5 });

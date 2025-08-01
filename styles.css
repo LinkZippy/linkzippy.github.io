@@ -612,6 +612,14 @@ intro styles
     white-space: nowrap;
 }
 
+.timeline1.hidden,
+.timeline2.hidden,
+.timeline3.hidden,
+.timeline4.hidden {
+    animation: fadeOut 0.2s ease forwards;
+    opacity: 0;
+}
+
 /* Experiences section */
 
 #experiences {}
