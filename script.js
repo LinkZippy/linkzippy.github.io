@@ -125,6 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.classList.remove("hidden");
                 abp.offsetHeight;
                 abp.classList.add("visible");
+
+                document.querySelector('.timeline1')?.classList.add('visible');
+                document.querySelector('.timeline2')?.classList.add('visible');
+                document.querySelector('.timeline3')?.classList.add('visible');
+                document.querySelector('.timeline4')?.classList.add('visible');
             } else {
                 aboutSection.classList.
                     remove("visible");
@@ -136,6 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 abp.classList.remove("visible");
                 abp.offsetHeight;
                 abp.classList.add("hidden");
+
+                document.querySelector('.timeline1')?.classList.remove('visible');
+                document.querySelector('.timeline2')?.classList.remove('visible');
+                document.querySelector('.timeline3')?.classList.remove('visible');
+                document.querySelector('.timeline4')?.classList.remove('visible');
             }
         });
     }, { threshold: 0.5 });

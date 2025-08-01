@@ -488,21 +488,128 @@ intro styles
 #timeline-container {
     flex: 1;
     position: relative;
-    max-width: 50%;
-    height: auto;
-    display: block;
-    gap: 20px;
-    flex-direction: column;
+    max-height: 80vh;
+    overflow: visible;
 }
 
 #timeline-container img {
+    padding-top: 100px;
+    position: absolute;
+    height: auto;
+}
+
+.timeline1 {
+    width: 300px;
+    top: 0;
+    left: 0;
+    position: relative;
+    opacity: 0;
+}
+
+.timeline2 {
+    width: 300px;
+    top: 350px;
+    right: 0;
+    margin-left: 100px;
+    z-index: 2;
+    position: relative;
+    opacity: 0;
+}
+
+.timeline3 {
+    width: 400px;
+    top: 100px;
+    right: 5%;
+    position: relative;
+    opacity: 0;
+}
+
+.timeline4 {
+    width: 400px;
+    top: 300px;
+    left: 10%;
+    position: relative;
+    opacity: 0;
+}
+
+.timeline1.visible {
+    animation: slideInDown 1.2s ease-out forwards;
+}
+
+.timeline2.visible {
+    animation: slideInUp 1.2s ease-out forwards;
+}
+
+.timeline3.visible {
+    animation: slideInRight 1.2s ease-out forwards;
+}
+
+.timeline4.visible {
+    animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.timeline-wrapper {
+    position: absolute;
+    opacity: 0;
+    pointer-events: auto;
+    transition: z-index 0.2s ease;
+}
+
+.timeline-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
-    /* optional, for rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* optional, for subtle shadows */
+    transform-origin: center center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.caption {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+.timeline-wrapper:hover {
+    z-index: 5;
+}
+
+.timeline-wrapper:hover img {
+    transform: scale(1.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-wrapper:hover .caption {
+    opacity: 1;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.caption1 {
+    padding-top: 430px;
+    width: 300px;
+    animation: fadeOut 0.1s ease forwards;
+}
+
+.caption2 {
+    padding-top: 420px;
+    width: 300px;
+    animation: fadeOut 0.1s ease forwards;
+}
+
+.caption3 {
+    padding-top: 400px;
+    padding-left: 50px;
+    width: 300px;
+    animation: fadeOut 0.1s ease forwards;
+    white-space: nowrap;
+}
+
+.caption4 {
+    padding-top: 370px;
+    padding-left: 75px;
+    width: 300px;
+    animation: fadeOut 0.1s ease forwards;
+    white-space: nowrap;
 }
 
 /* Experiences section */
@@ -713,23 +820,43 @@ intro styles
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(20px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
 @keyframes fadeOut {
     0% {
         opacity: 1;
-        transform: translateY(0);
     }
 
     100% {
         opacity: 0;
-        transform: translateY(20px);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
