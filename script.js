@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.5 });
 
+    //allow scrolling horizontally and vertically
+
     aboutObserver.observe(aboutSection);
 
     const horizontalScroll = document.querySelector('.horizontal-scroll');
@@ -188,6 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.horizontal-scroll').addEventListener('scroll', updateDotsAndNav);
     window.addEventListener('load', updateDotsAndNav);
 
+    // clouds
+
     const cloudContainer = document.querySelector('.clouds');
     const cloudImages = [
         'images/cloud1.png',
@@ -196,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'images/cloud4.png'
     ];
     function generateClouds() {
-        const numClouds = window.innerWidth > 768 ? 4 : 2;
+        const numClouds = 6;
 
 
         for (let i = 0; i < numClouds; i++) {
@@ -228,22 +232,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const words = ["coder", "photographer", "developer", "storyteller", "listener"];
+    //swapping words
+
+    const words = ["coder.", "photographer.", "learner.", "sports fanatic.", "enthusiast."];
     let current = 0;
     const swapWord = document.getElementById("swap-word");
 
     setInterval(() => {
+        swapWord.classList.remove("fadeIn");
         current = (current + 1) % words.length;
         swapWord.textContent = words[current];
+        void swapWord.offsetWidth;
+        swapWord.classList.add("fadeIn");
     }, 2500);
 
-    const years = [2025, 2023, 2020, 2017, 2010]; // add your years
+    //timeline dial
+
+    const years = [2013, 2021, 2022, 2023, 2024, 2025];
     const data = {
-        2025: { text: "Started college at Dartmouth!", image: "images/dartmouth.jpg" },
-        2023: { text: "Graduated high school.", image: "images/dartmouth.jpg" },
-        2020: { text: "Got really into coding.", image: "images/dartmouth.jpg" },
-        2017: { text: "Joined a music group.", image: "images/dartmouth.jpg" },
-        2010: { text: "Wore a cape every day.", image: "images/dartmouth.jpg" },
+        2013: { text: "Mini-Phoom yoinking a chicken in Fang, Chiang Mai", image: "images/time1.JPG" },
+        2021: { text: "My first Magic: The Gathering tournament win!!!", image: "images/time2.JPG" },
+        2022: { text: "My Model United Nations secretariat opening speech", image: "images/time3.JPEG" },
+        2023: { text: "Me absolutely finessing this guy in soccer", image: "images/time4.JPG" },
+        2024: { text: "First day on campus at Dartmouth!", image: "images/time5.JPG" },
+        2025: { text: "Fellow interns at Indorama Ventures", image: "images/time6.JPG" }
     };
 
     const dial = document.getElementById("year-dial");
@@ -259,11 +271,14 @@ document.addEventListener("DOMContentLoaded", () => {
             div.classList.add("year-item");
             div.textContent = year;
             div.style.fontSize = `${100 - Math.abs(i - currIndex) * 20}%`;
+            div.style.opacity = i === currIndex ? "1" : "0.6";
+
             div.addEventListener("click", () => {
                 currIndex = i;
                 renderDial();
                 updateContent(year);
             });
+
             dial.appendChild(div);
         });
     }
@@ -275,5 +290,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderDial();
     updateContent(years[currIndex]);
+
+    let scrollInterval = null;
+
+    dial.addEventListener("mousemove", (e) => {
+        const bounds = dial.getBoundingClientRect();
+        const y = e.clientY - bounds.top;
+
+        const zoneHeight = bounds.height / 4;
+
+        if (y < zoneHeight) {
+            // Hovering near the top
+            if (!scrollInterval) {
+                scrollInterval = setInterval(() => {
+                    dial.scrollTop -= 10;
+                }, 30);
+            }
+        } else if (y > bounds.height - zoneHeight) {
+            // Hovering near the bottom
+            if (!scrollInterval) {
+                scrollInterval = setInterval(() => {
+                    dial.scrollTop += 10;
+                }, 30);
+            }
+        } else {
+            // Not in top or bottom zone
+            clearInterval(scrollInterval);
+            scrollInterval = null;
+        }
+    });
+
+    dial.addEventListener("mouseleave", () => {
+        clearInterval(scrollInterval);
+        scrollInterval = null;
+    });
 
 });
