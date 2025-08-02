@@ -141,7 +141,6 @@ nav a.active {
     border-radius: 5px;
 }
 
-/* Dot directly beneath nav link */
 .nav-links .dot {
     width: 10px;
     height: 10px;
@@ -154,11 +153,10 @@ nav a.active {
     background-color: #1e3a8a;
 }
 
-/* Line connecting dots */
 .nav-links::before {
     content: "";
     position: absolute;
-    width: 710px;
+    width: 830px;
     margin-top: 50px;
     margin-left: 40px;
     height: 2px;
@@ -581,7 +579,7 @@ intro styles
 
 .timeline-wrapper:hover .caption {
     opacity: 1;
-    animation: fadeIn 0.4s ease forwards;
+    animation: fadeIn 0.1s ease forwards;
 }
 
 .caption1 {

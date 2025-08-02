@@ -258,9 +258,9 @@ document.addEventListener("DOMContentLoaded", () => {
             img.style.width = `${width}px`;
 
             // Animation
-            const duration = 40 + Math.random() * 40; // 40–80s
+            const duration = 40 + Math.random() * 40; //40–80s
             img.style.animationDuration = `${duration}s`;
-            img.style.animationDelay = `0s`; // all start immediately
+            img.style.animationDelay = `0s`; //all start immediately
 
             // Random scale
             const scale = 0.9 + Math.random() * 0.3;
