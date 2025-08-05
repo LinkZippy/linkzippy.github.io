@@ -246,23 +246,19 @@ document.addEventListener("DOMContentLoaded", () => {
             img.src = cloudImages[Math.floor(Math.random() * cloudImages.length)];
             img.classList.add('cloud');
 
-            // Random vertical position (top 0–50%)
             const top = Math.random() * 10;
             img.style.top = `${top}%`;
 
-            // Random horizontal start position (left: 0vw to 100vw)
             const left = -30 + Math.random() * 130;
             img.style.left = `${left}vw`;
 
             const width = 250 + Math.random() * 100;
             img.style.width = `${width}px`;
 
-            // Animation
-            const duration = 40 + Math.random() * 40; //40–80s
+            const duration = 40 + Math.random() * 40;
             img.style.animationDuration = `${duration}s`;
-            img.style.animationDelay = `0s`; //all start immediately
+            img.style.animationDelay = `0s`;
 
-            // Random scale
             const scale = 0.9 + Math.random() * 0.3;
             img.style.transform = `scale(${scale})`;
 
