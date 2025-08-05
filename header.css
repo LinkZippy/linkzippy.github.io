@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+header {
+    background-color: transparent;
+    color: #1e3a8a;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    opacity: 0;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    font-family: "Tai Heritage Pro", serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    list-style: none;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #1e3a8a;
+    border-radius: 5px;
+}
+
+nav a.active {
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    padding-top: 30px;
+    margin: 0;
+}
+
+.nav-links li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links a {
+    font-family: "Tai Heritage Pro", serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #1e3a8a;
+    padding: 8px 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: white;
+    color: #1e3a8a;
+    border-radius: 5px;
+}
+
+.nav-links a.active {
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-links .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links .dot.active {
+    background-color: #1e3a8a;
+}
+
+.nav-links::before {
+    content: "";
+    position: absolute;
+    width: 830px;
+    margin-top: 50px;
+    margin-left: 40px;
+    height: 2px;
+    background-color: #ccc;
+    z-index: -1000;
+}

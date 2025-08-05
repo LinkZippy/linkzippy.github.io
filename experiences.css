@@ -1,0 +1,47 @@
+.experiences-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-height: 80vh;
+    overflow: visible;
+    max-width: 100%;
+}
+
+.academics,
+.passion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.academics img {
+    width: 200px;
+    height: auto;
+    position: relative;
+}
+
+.dartmouth img {
+    position: absolute;
+    width: 300px;
+    top: 10%;
+    left: 50%;
+}
+
+.ivl {
+    z-index: 10000;
+}
+
+
+.ivl img {
+    width: 400px;
+    left: -10%;
+    top: 45%;
+}
+
+.heng img {
+    width: 200px;
+}
