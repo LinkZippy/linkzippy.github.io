@@ -10,10 +10,11 @@
 
 .academics {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: relative;
+    gap: 100px;
 }
 
 .academics img {
@@ -45,6 +46,7 @@
 }
 
 .dartmouth::before {
+    display: block;
     position: absolute;
     content: "";
     background: #01683e;
@@ -53,7 +55,7 @@
     width: 85%;
     height: 8px;
     z-index: -1;
-    transform: rotate(90deg);
+    rotate: 90deg;
 }
 
 .ivl {
@@ -117,5 +119,77 @@
     width: 100%;
     height: 8px;
     z-index: -1;
-    transform: rotate(90deg);
+    rotate: 90deg;
+}
+
+.dartmouth p,
+.ivl p,
+.heng p,
+.dartmouth::before,
+.ivl::before,
+.heng::before {
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+
+.dartmouth:hover p {
+    animation-name: slideInLeft;
+    opacity: 1;
+}
+
+.dartmouth:not(:hover) p {
+    animation-name: slideOutRight;
+    opacity: 0;
+}
+
+.dartmouth:hover::before {
+    animation-name: slideInUp;
+    opacity: 1;
+}
+
+.dartmouth:not(:hover)::before {
+    animation-name: slideOutDown;
+    opacity: 0;
+}
+
+.ivl:hover p {
+    animation-name: slideInDown;
+    opacity: 1;
+}
+
+.ivl:not(:hover) p {
+    animation-name: slideOutUp;
+    opacity: 0;
+}
+
+.ivl:hover::before {
+    animation-name: slideInDown;
+    opacity: 1;
+}
+
+.ivl:not(:hover)::before {
+    animation-name: slideOutUp;
+    opacity: 0;
+}
+
+.heng:hover p {
+    animation-name: slideInRight;
+    opacity: 1;
+}
+
+.heng:not(:hover) p {
+    animation-name: slideOutRight;
+    opacity: 0;
+}
+
+.heng:hover::before {
+    animation-name: slideInDown;
+    opacity: 1;
+}
+
+.heng:not(:hover)::before {
+    animation-name: slideOutUp;
+    opacity: 0;
 }
