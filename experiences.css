@@ -18,7 +18,6 @@
 }
 
 .academics img {
-    width: 200px;
     height: auto;
     position: absolute;
 }
@@ -26,7 +25,7 @@
 .dartmouth {
     width: 300px;
     position: absolute;
-    z-index: 0;
+    z-index: 10;
 }
 
 .dartmouth img {
@@ -41,7 +40,7 @@
     top: -130px;
     left: 463px;
     max-width: 700px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
 }
 
@@ -61,20 +60,20 @@
 .ivl {
     width: 400px;
     position: absolute;
-    z-index: 10000;
 }
 
 .ivl img {
     width: 400px;
     left: -170px;
-    top: 80px;
+    top: 110px;
 }
 
 .ivl p {
     position: relative;
-    top: 200px;
+    width: 400px;
+    top: 230px;
     left: -170px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
 }
 
@@ -82,7 +81,7 @@
     position: absolute;
     content: "";
     background: #2a4078;
-    top: 190px;
+    top: 220px;
     left: -170px;
     width: 100%;
     height: 8px;
@@ -92,7 +91,6 @@
 .heng {
     width: 200px;
     position: absolute;
-    z-index: 10000;
 }
 
 .heng img {
@@ -103,10 +101,10 @@
 
 .heng p {
     position: relative;
+    width: 300px;
     top: -95px;
-    left: -305px;
-    max-width: 700px;
-    font-size: 1.2em;
+    left: -405px;
+    font-size: 1.1em;
     text-align: right;
 }
 
@@ -122,74 +120,64 @@
     rotate: 90deg;
 }
 
-.dartmouth p,
-.ivl p,
-.heng p,
-.dartmouth::before,
-.ivl::before,
-.heng::before {
-    opacity: 0;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    pointer-events: none;
+.yacht {
+    width: 650px;
+    position: absolute;
 }
 
-.dartmouth:hover p {
-    animation-name: slideInLeft;
-    opacity: 1;
+.yacht img {
+    width: 650px;
+    top: 250px;
+    left: 600px;
 }
 
-.dartmouth:not(:hover) p {
-    animation-name: slideOutRight;
-    opacity: 0;
+.yacht p {
+    position: relative;
+    top: 150px;
+    left: 600px;
+    max-width: 550px;
+    font-size: 1.1em;
+    text-align: left;
 }
 
-.dartmouth:hover::before {
-    animation-name: slideInUp;
-    opacity: 1;
+.yacht::before {
+    position: absolute;
+    content: "";
+    background: #70aacd;
+    top: 290px;
+    left: 600px;
+    width: 80%;
+    height: 8px;
+    z-index: -1;
 }
 
-.dartmouth:not(:hover)::before {
-    animation-name: slideOutDown;
-    opacity: 0;
+.moxopal {
+    width: 400px;
+    position: absolute;
 }
 
-.ivl:hover p {
-    animation-name: slideInDown;
-    opacity: 1;
+.moxopal img {
+    width: 400px;
+    top: 200px;
+    left: -660px;
 }
 
-.ivl:not(:hover) p {
-    animation-name: slideOutUp;
-    opacity: 0;
+.moxopal p {
+    position: relative;
+    top: 50px;
+    left: -600px;
+    max-width: 330px;
+    font-size: 1.1em;
+    text-align: left;
 }
 
-.ivl:hover::before {
-    animation-name: slideInDown;
-    opacity: 1;
-}
-
-.ivl:not(:hover)::before {
-    animation-name: slideOutUp;
-    opacity: 0;
-}
-
-.heng:hover p {
-    animation-name: slideInRight;
-    opacity: 1;
-}
-
-.heng:not(:hover) p {
-    animation-name: slideOutRight;
-    opacity: 0;
-}
-
-.heng:hover::before {
-    animation-name: slideInDown;
-    opacity: 1;
-}
-
-.heng:not(:hover)::before {
-    animation-name: slideOutUp;
-    opacity: 0;
+.moxopal::before {
+    position: absolute;
+    content: "";
+    background: #98918c;
+    top: 170px;
+    left: -600px;
+    width: 80%;
+    height: 8px;
+    z-index: -1;
 }
