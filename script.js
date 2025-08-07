@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeline4 = document.querySelector(".timeline4");
     //experiences elements
     const workTitle = document.querySelector(".work-title");
+    const projectTitle = document.querySelectorAll(".project-title");
     const workBar = document.querySelector(".work::before");
+    const projectBar = document.querySelectorAll(".project::before");
     const dartmouth = document.querySelector(".dartmouth img");
     const ivl = document.querySelector(".ivl img");
     const heng = document.querySelector(".heng img");
@@ -120,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 h2.classList.add("hidden");
                 p.classList.add("hidden");
 
-                // 👇 Remove clouds when #intro is out of view
                 document.querySelector('.clouds').innerHTML = '';
                 cloudsGenerated = false;
 
@@ -226,6 +227,105 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollLocked = false;
         }, 700);
     }, { passive: false });
+
+    //experiences animantions
+
+    const experiencesSection = document.getElementById("experiences");
+
+    const applyAnimation = (el, removeClasses, addClass) => {
+        el.classList.remove(...removeClasses, "hidden");
+        void el.offsetHeight;
+        el.classList.add(addClass);
+    };
+
+    const applyAnimationToAll = (elements, removeClasses, addClass) => {
+        elements.forEach(el => applyAnimation(el, removeClasses, addClass));
+    };
+
+    const experiencesObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                workTitle.classList.remove("hidden");
+                applyAnimation(workTitle, ["slide-out-up"], "slide-in-down");
+
+                dartmouth.classList.remove("hidden");
+                applyAnimation(dartmouth, ["slide-out-right"], "slide-in-left");
+
+                ivl.classList.remove("hidden");
+                applyAnimation(ivl, ["slide-out-right"], "slide-in-left");
+
+                heng.classList.remove("hidden");
+                applyAnimation(heng, ["slide-out-right"], "slide-in-left");
+
+                setTimeout(() => {
+                    applyAnimationToAll(dartmouthText, ["slide-out-right"], "slide-in-left");
+                    applyAnimationToAll(ivlText, ["slide-out-right"], "slide-in-left");
+                    applyAnimationToAll(hengText, ["slide-out-right"], "slide-in-left");
+                }, 600);
+
+                yacht.classList.remove("hidden");
+                applyAnimation(yacht, ["slide-out-left"], "slide-in-right");
+
+                moxopal.classList.remove("hidden");
+                applyAnimation(moxopal, ["slide-out-down"], "slide-in-up");
+
+                setTimeout(() => {
+                    yachtText.classList.remove("hidden");
+                    applyAnimation(yachtText, ["slide-out-up"], "slide-in-down");
+
+                    moxopalText.classList.remove("hidden");
+                    applyAnimation(moxopalText, ["slide-out-up"], "slide-in-down");
+                }, 600);
+
+                applyAnimationToAll(projectTitle, ["slide-out-up"], "slide-in-down");
+                applyAnimationToAll(projectBar, ["slide-out-up"], "slide-in-down");
+
+            } else {
+                applyAnimation(workTitle, ["slide-in-down"], "slide-out-up");
+                workTitle.classList.add("hidden");
+
+                applyAnimation(dartmouth, ["slide-in-left"], "slide-out-right");
+                dartmouth.classList.add("hidden");
+
+                applyAnimation(ivl, ["slide-in-left"], "slide-out-right");
+                ivl.classList.add("hidden");
+
+                applyAnimation(heng, ["slide-in-left"], "slide-out-right");
+                heng.classList.add("hidden");
+
+                applyAnimationToAll(dartmouthText, ["slide-in-left"], "slide-out-right");
+                dartmouthText.forEach(el => el.classList.add("hidden"));
+
+                applyAnimationToAll(ivlText, ["slide-in-left"], "slide-out-right");
+                ivlText.forEach(el => el.classList.add("hidden"));
+
+                applyAnimationToAll(hengText, ["slide-in-left"], "slide-out-right");
+                hengText.forEach(el => el.classList.add("hidden"));
+
+                applyAnimation(yacht, ["slide-in-right"], "slide-out-left");
+                yacht.classList.add("hidden");
+
+                applyAnimation(moxopal, ["slide-in-up"], "slide-out-down");
+                moxopal.classList.add("hidden");
+
+                applyAnimation(yachtText, ["slide-in-down"], "slide-out-up");
+                yachtText.classList.add("hidden");
+
+                applyAnimation(moxopalText, ["slide-in-down"], "slide-out-up");
+                moxopalText.classList.add("hidden");
+
+                applyAnimationToAll(projectTitle, ["slide-in-down"], "slide-out-up");
+                projectTitle.forEach(el => el.classList.add("hidden"));
+
+                applyAnimationToAll(projectBar, ["slide-in-down"], "slide-out-up");
+                projectBar.forEach(el => el.classList.add("hidden"));
+            }
+        });
+    }, { threshold: 0.5 });
+
+    experiencesObserver.observe(experiencesSection);
+
+    experiencesObserver.observe(experiencesSection);
 
     const dots = document.querySelectorAll('.dot');
 
