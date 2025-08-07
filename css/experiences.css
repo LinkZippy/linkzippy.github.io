@@ -17,6 +17,39 @@
     gap: 100px;
 }
 
+.languages-carousel {
+    position: relative;
+    top: -650px;
+    left: 350px;
+    width: 1000px;
+    overflow: hidden;
+    padding: 20px 0;
+    background: transparent;
+}
+
+.carousel-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 25s linear infinite;
+}
+
+.carousel-track img {
+    width: 70px;
+    height: auto;
+    margin: 0 30px;
+}
+
+/* Keyframes for scrolling */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .academics img {
     height: auto;
     position: absolute;
@@ -29,7 +62,8 @@
 }
 
 .dartmouth img {
-    width: 300px;
+    width: 50px;
+    /*300*/
     top: -150px;
     left: 50%;
     z-index: 1;
@@ -44,7 +78,7 @@
     text-align: left;
 }
 
-.dartmouth::before {
+/* .dartmouth::before {
     display: block;
     position: absolute;
     content: "";
@@ -55,7 +89,7 @@
     height: 8px;
     z-index: -1;
     rotate: 90deg;
-}
+} */
 
 .ivl {
     width: 400px;
@@ -77,7 +111,7 @@
     text-align: left;
 }
 
-.ivl::before {
+/* .ivl::before {
     position: absolute;
     content: "";
     background: #2a4078;
@@ -86,7 +120,7 @@
     width: 100%;
     height: 8px;
     z-index: -1;
-}
+} */
 
 .heng {
     width: 200px;
@@ -94,7 +128,8 @@
 }
 
 .heng img {
-    width: 200px;
+    width: 50px;
+    /*200*/
     top: -90px;
     left: -75px;
 }
@@ -108,7 +143,7 @@
     text-align: right;
 }
 
-.heng::before {
+/* .heng::before {
     position: absolute;
     content: "";
     background: #01683e;
@@ -118,7 +153,7 @@
     height: 8px;
     z-index: -1;
     rotate: 90deg;
-}
+} */
 
 .yacht {
     width: 650px;
@@ -140,7 +175,7 @@
     text-align: left;
 }
 
-.yacht::before {
+/* .yacht::before {
     position: absolute;
     content: "";
     background: #70aacd;
@@ -149,7 +184,7 @@
     width: 80%;
     height: 8px;
     z-index: -1;
-}
+} */
 
 .moxopal {
     width: 400px;
@@ -171,7 +206,7 @@
     text-align: left;
 }
 
-.moxopal::before {
+/* .moxopal::before {
     position: absolute;
     content: "";
     background: #98918c;
@@ -180,4 +215,4 @@
     width: 80%;
     height: 8px;
     z-index: -1;
-}
+} */
