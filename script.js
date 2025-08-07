@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
     const partiallyVisible = bounding.bottom > 0 && bounding.top < window.innerHeight;
 
     if (partiallyVisible) {
-        // If intro is already in view on load, manually trigger intro effects
         if (!cloudsGenerated) {
             generateClouds();
             cloudsGenerated = true;
