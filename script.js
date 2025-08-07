@@ -41,6 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeline2 = document.querySelector(".timeline2");
     const timeline3 = document.querySelector(".timeline3");
     const timeline4 = document.querySelector(".timeline4");
+    //experiences elements
+    const workTitle = document.querySelector(".work-title");
+    const workBar = document.querySelector(".work::before");
+    const dartmouth = document.querySelector(".dartmouth img");
+    const ivl = document.querySelector(".ivl img");
+    const heng = document.querySelector(".heng img");
+    const moxopal = document.querySelector(".moxopal img");
+    const yacht = document.querySelector(".yacht img");
+    const dartmouthText = document.querySelectorAll(".dartmouth h2, .dartmouth h3, .dartmouth p");
+    const ivlText = document.querySelectorAll(".ivl h2, .ivl h3, .ivl p");
+    const hengText = document.querySelectorAll(".heng h2, .heng h3, .heng p");
+    const moxopalText = document.querySelector(".moxopal p");
+    const yachtText = document.querySelector(".yacht p");
 
     let firstTime = true;
     let wasHidden = true;

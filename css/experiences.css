@@ -10,7 +10,7 @@
 
 .languages-carousel {
     position: relative;
-    top: -670px;
+    top: -690px;
     left: -40px;
     width: 1710px;
     overflow: hidden;
@@ -26,31 +26,35 @@
 
 .carousel-track img {
     position: relative;
-    width: 40px;
+    width: 50px;
     height: auto;
     margin: 0 30px;
 }
 
-.work {
+.work,
+.projects {
     display: flex;
     align-items: left;
     justify-content: center;
     position: relative;
 }
 
-.work h1 {
+.experiences-container h1 {
     position: absolute;
     font-family: "Poppins", sans-serif;
     font-size: 5em;
-    rotate: -90deg;
-    top: 350px;
-    left: -220px;
     color: black;
 }
 
-.work h2 {
+.experiences-container h2 {
     font-weight: 600;
     font-size: 2em;
+}
+
+.work-title {
+    rotate: -90deg;
+    top: 430px;
+    left: -205px;
 }
 
 .work::before {
@@ -62,7 +66,12 @@
     width: 617px;
     height: 8px;
     z-index: -1;
-    rotate: 90deg;
+    rotate: -90deg;
+}
+
+.work-title.visible,
+.work::before.visible {
+    animation: slideInDown 0.5s ease-in-out;
 }
 
 .work img {
@@ -81,8 +90,9 @@
 .dartmouth p {
     color: black;
     position: relative;
-    top: 170px;
-    left: 380px;
+    top: 210px;
+    left: 360px;
+    max-width: 700px;
 }
 
 .ivl img {
@@ -90,72 +100,75 @@
     top: 420px;
 }
 
+.ivl h2,
+.ivl h3,
+.ivl p {
+    color: black;
+    position: relative;
+    top: 400px;
+    left: -180px;
+    max-width: 700px;
+}
+
 .heng img {
     left: 180px;
     top: 610px;
 }
 
+.heng h2,
+.heng h3,
+.heng p {
+    color: black;
+    position: relative;
+    top: 600px;
+    left: -720px;
+    max-width: 700px;
+}
 
+.projects h1 {
+    left: 600px;
+}
 
-
-.yacht {
-    width: 650px;
+.projects::before {
     position: absolute;
+    content: "";
+    background: #000000;
+    top: 110px;
+    left: 603px;
+    width: 410px;
+    height: 8px;
+    z-index: -1;
 }
 
 .yacht img {
+    position: absolute;
     width: 650px;
-    top: 250px;
-    left: 600px;
+    top: 450px;
+    left: 530px;
 }
 
 .yacht p {
     position: relative;
-    top: 150px;
-    left: 600px;
+    top: 260px;
+    left: 270px;
     max-width: 550px;
     font-size: 1.1em;
     text-align: left;
 }
 
-/* .yacht::before {
-    position: absolute;
-    content: "";
-    background: #70aacd;
-    top: 290px;
-    left: 600px;
-    width: 80%;
-    height: 8px;
-    z-index: -1;
-} */
-
-.moxopal {
-    width: 400px;
-    position: absolute;
-}
-
 .moxopal img {
+    position: absolute;
     width: 400px;
-    top: 200px;
-    left: -660px;
+    top: 350px;
+    left: 900px;
+    z-index: 10;
 }
 
 .moxopal p {
     position: relative;
-    top: 50px;
-    left: -600px;
+    top: 130px;
+    left: 600px;
     max-width: 330px;
     font-size: 1.1em;
     text-align: left;
 }
-
-/* .moxopal::before {
-    position: absolute;
-    content: "";
-    background: #98918c;
-    top: 170px;
-    left: -600px;
-    width: 80%;
-    height: 8px;
-    z-index: -1;
-} */

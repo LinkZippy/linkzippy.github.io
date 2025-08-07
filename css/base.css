@@ -66,11 +66,9 @@ section {
 }
 
 section h1 {
-    margin: auto;
     font-family: "Poppins", sans-serif;
     font-weight: 1000;
     font-style: normal;
-    ;
 }
 
 section h2 {
@@ -80,8 +78,14 @@ section h2 {
     font-style: normal;
 }
 
+section h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
 section p {
     font-family: "Poppins", sans-serif;
-    font-weight: thin 100;
+    font-weight: 100;
     font-style: normal;
 }
