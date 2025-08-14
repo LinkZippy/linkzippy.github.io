@@ -1,0 +1,18 @@
+involvement-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+    max-height: 80vh;
+    overflow: visible;
+}
+
+.opal img,
+.tsa img,
+.ismp img {
+    position: relative;
+    width: 100px;
+    height: auto;
+    margin: 0 20px;
+}
