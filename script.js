@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeline4 = document.querySelector(".timeline4");
     //experiences elements
     const workTitle = document.querySelector(".work-title");
-    const projectTitle = document.querySelectorAll(".project-title");
-    const workBar = document.querySelector(".work::before");
-    const projectBar = document.querySelectorAll(".project::before");
+    const projectTitle = document.querySelector(".project-title");
+    const workBar = document.querySelector(".work-bar");
+    const projectBar = document.querySelector(".project-bar");
     const dartmouth = document.querySelector(".dartmouth img");
     const ivl = document.querySelector(".ivl img");
     const heng = document.querySelector(".heng img");
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hengText = document.querySelectorAll(".heng h2, .heng h3, .heng p");
     const moxopalText = document.querySelector(".moxopal p");
     const yachtText = document.querySelector(".yacht p");
+    const carousel = document.querySelector(".languages-carousel");
 
     let firstTime = true;
     let wasHidden = true;
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 700);
     }, { passive: false });
 
-    //experiences animantions
+    //experiences animations
 
     const experiencesSection = document.getElementById("experiences");
 
@@ -247,6 +248,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 workTitle.classList.remove("hidden");
                 applyAnimation(workTitle, ["slide-out-up"], "slide-in-down");
 
+                workBar.classList.remove("hidden");
+                applyAnimation(workBar, ["slide-out-up"], "slide-in-down");
+
+                carousel.classList.remove("hidden");
+                applyAnimation(carousel, ["fadeOut"], "fadeIn");
+
                 dartmouth.classList.remove("hidden");
                 applyAnimation(dartmouth, ["slide-out-right"], "slide-in-left");
 
@@ -255,6 +262,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 heng.classList.remove("hidden");
                 applyAnimation(heng, ["slide-out-right"], "slide-in-left");
+
+                projectTitle.classList.remove("hidden");
+                applyAnimation(projectTitle, ["slide-out-up"], "slide-in-down");
+
+                projectBar.classList.remove("hidden");
+                applyAnimation(projectBar, ["slide-out-up"], "slide-in-down");
 
                 setTimeout(() => {
                     applyAnimationToAll(dartmouthText, ["slide-out-right"], "slide-in-left");
@@ -276,12 +289,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     applyAnimation(moxopalText, ["slide-out-up"], "slide-in-down");
                 }, 600);
 
-                applyAnimationToAll(projectTitle, ["slide-out-up"], "slide-in-down");
-                applyAnimationToAll(projectBar, ["slide-out-up"], "slide-in-down");
-
             } else {
                 applyAnimation(workTitle, ["slide-in-down"], "slide-out-up");
                 workTitle.classList.add("hidden");
+
+                applyAnimation(workBar, ["slide-in-down"], "slide-out-up");
+                workBar.classList.add("hidden");
+
+                applyAnimation(carousel, ["fadeIn"], "fadeOut");
+                carousel.classList.add("hidden");
 
                 applyAnimation(dartmouth, ["slide-in-left"], "slide-out-right");
                 dartmouth.classList.add("hidden");
@@ -313,16 +329,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 applyAnimation(moxopalText, ["slide-in-down"], "slide-out-up");
                 moxopalText.classList.add("hidden");
 
-                applyAnimationToAll(projectTitle, ["slide-in-down"], "slide-out-up");
-                projectTitle.forEach(el => el.classList.add("hidden"));
+                applyAnimation(projectTitle, ["slide-in-down"], "slide-out-up");
+                projectTitle.classList.add("hidden");
 
-                applyAnimationToAll(projectBar, ["slide-in-down"], "slide-out-up");
-                projectBar.forEach(el => el.classList.add("hidden"));
+                applyAnimation(projectBar, ["slide-in-down"], "slide-out-up");
+                projectBar.classList.add("hidden");
             }
         });
     }, { threshold: 0.5 });
-
-    experiencesObserver.observe(experiencesSection);
 
     experiencesObserver.observe(experiencesSection);
 

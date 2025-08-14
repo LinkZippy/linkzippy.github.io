@@ -29,7 +29,7 @@
     justify-content: left;
     text-align: left;
     font-size: 4em;
-    max-width: 500px;
+    max-width: 400px;
     margin-top: 100px;
     margin-left: 170px;
     opacity: 0;
@@ -39,7 +39,8 @@
         3px 3px 0 #bbb,
         4px 4px 0 #aaa;
     position: relative;
-    font-family: 'Fuzzy Bubbles', sans-serif;
+    font-family: "Tai Heritage Pro", serif;
+    font-weight: 400;
 }
 
 #about h2.visible {

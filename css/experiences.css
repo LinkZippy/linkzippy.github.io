@@ -43,7 +43,7 @@
     position: absolute;
     font-family: "Poppins", sans-serif;
     font-size: 5em;
-    color: black;
+    color: #4a4a4a;
 }
 
 .experiences-container h2 {
@@ -57,21 +57,16 @@
     left: -205px;
 }
 
-.work::before {
+.work-bar {
     position: absolute;
     content: "";
-    background: #000000;
+    background: #4a4a4a;
     top: 490px;
     left: -150px;
     width: 617px;
     height: 8px;
     z-index: -1;
     rotate: -90deg;
-}
-
-.work-title.visible,
-.work::before.visible {
-    animation: slideInDown 0.5s ease-in-out;
 }
 
 .work img {
@@ -88,7 +83,7 @@
 .dartmouth h2,
 .dartmouth h3,
 .dartmouth p {
-    color: black;
+    color: #4a4a4a;
     position: relative;
     top: 210px;
     left: 360px;
@@ -103,7 +98,7 @@
 .ivl h2,
 .ivl h3,
 .ivl p {
-    color: black;
+    color: #4a4a4a;
     position: relative;
     top: 400px;
     left: -180px;
@@ -118,7 +113,7 @@
 .heng h2,
 .heng h3,
 .heng p {
-    color: black;
+    color: #4a4a4a;
     position: relative;
     top: 600px;
     left: -720px;
@@ -129,10 +124,10 @@
     left: 600px;
 }
 
-.projects::before {
+.project-bar {
     position: absolute;
     content: "";
-    background: #000000;
+    background: #4a4a4a;
     top: 110px;
     left: 603px;
     width: 410px;
@@ -149,6 +144,7 @@
 
 .yacht p {
     position: relative;
+    color: #4a4a4a;
     top: 260px;
     left: 270px;
     max-width: 550px;
@@ -166,6 +162,7 @@
 
 .moxopal p {
     position: relative;
+    color: #4a4a4a;
     top: 130px;
     left: 600px;
     max-width: 330px;
@@ -174,33 +171,33 @@
 }
 
 .slide-in-down {
-    animation: slideInDown 0.6s ease forwards;
+    animation: slideInDown 1s ease forwards;
 }
 
 .slide-out-up {
-    animation: slideOutUp 0.6s ease forwards;
+    animation: slideOutUp 1s ease forwards;
 }
 
 .slide-in-left {
-    animation: slideInLeft 0.6s ease forwards;
+    animation: slideInLeft 1s ease forwards;
 }
 
 .slide-out-right {
-    animation: slideOutRight 0.6s ease forwards;
+    animation: slideOutRight 1s ease forwards;
 }
 
 .slide-in-right {
-    animation: slideInRight 0.6s ease forwards;
+    animation: slideInRight 1s ease forwards;
 }
 
 .slide-out-left {
-    animation: slideOutLeft 0.6s ease forwards;
+    animation: slideOutLeft 1s ease forwards;
 }
 
 .slide-in-up {
-    animation: slideInUp 0.6s ease forwards;
+    animation: slideInUp 1s ease forwards;
 }
 
 .slide-out-down {
-    animation: slideOutDown 0.6s ease forwards;
+    animation: slideOutDown 1s ease forwards;
 }

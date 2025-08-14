@@ -106,9 +106,9 @@ nav a.active {
 .nav-links::before {
     content: "";
     position: absolute;
-    width: 830px;
+    width: 660px;
     margin-top: 50px;
-    margin-left: 40px;
+    margin-left: 30px;
     height: 2px;
     background-color: #ccc;
     z-index: -1000;
