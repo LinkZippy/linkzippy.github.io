@@ -23,7 +23,6 @@
     flex: 0 0 100vw;
     height: 100vh;
     scroll-snap-align: start;
-    padding: 40px;
     box-sizing: border-box;
 }
 

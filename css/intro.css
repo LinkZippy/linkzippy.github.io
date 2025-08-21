@@ -11,8 +11,8 @@
     font-size: 10rem;
     color: #1e3a8a;
     opacity: 0;
-    padding: 80px;
-    margin-top: 300px;
+    padding: 8vh 5vw;
+    margin-top: 32vh;
     margin-bottom: -100px;
     text-shadow:
         1px 1px 0 #ddd,
@@ -26,7 +26,7 @@
     font-size: 4rem;
     color: #1e3a8a;
     opacity: 0;
-    margin-bottom: -100px;
+    margin-bottom: -10vh;
     text-shadow:
         1px 1px 0 #ddd,
         2px 2px 0 #ccc,
@@ -38,7 +38,7 @@
     opacity: 0;
     margin-top: 0px;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 100px;
+    margin-top: 10vh;
 }
 
 #intro h1.first-visible {
@@ -81,13 +81,13 @@
 }
 
 .intro-img {
-    width: 700px;
+    width: 40vw;
     height: auto;
     display: block;
     cursor: pointer;
     opacity: 1;
     transition: transform 0.3s ease;
-    margin-bottom: 200px;
+    margin-bottom: 18vh;
 }
 
 .intro-img-container {
@@ -132,7 +132,7 @@
 
 .cloud {
     position: absolute;
-    width: 300px;
+    width: 20vh;
     opacity: 0.85;
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5));
     will-change: transform;

@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 700);
     }, { passive: false });
 
-    //experiences animations
+    //experiences animations: using a different approach to test separating animations from adding hidden/visible in js
 
     const experiencesSection = document.getElementById("experiences");
 
