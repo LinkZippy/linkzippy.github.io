@@ -12,8 +12,7 @@
     opacity: 0;
     transition: opacity 1s ease;
     position: relative;
-    top: -690px;
-    left: -40px;
+    top: -70vh;
     width: 1710px;
     overflow: hidden;
     padding: 20px 0;
