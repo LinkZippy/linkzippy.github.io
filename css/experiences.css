@@ -12,10 +12,9 @@
     opacity: 0;
     transition: opacity 1s ease;
     position: relative;
-    top: -70vh;
-    width: 1710px;
+    top: -68vh;
+    width: 100%;
     overflow: hidden;
-    padding: 20px 0;
     background: transparent;
 }
 
@@ -27,9 +26,9 @@
 
 .carousel-track img {
     position: relative;
-    width: 50px;
+    width: 3vw;
     height: auto;
-    margin: 0 30px;
+    margin: 0 2vw;
 }
 
 .work,
@@ -54,31 +53,31 @@
 
 .work-title {
     rotate: -90deg;
-    top: 430px;
-    left: -205px;
+    top: 45vh;
+    left: -12vw;
 }
 
 .work-bar {
     position: absolute;
     content: "";
     background: #4a4a4a;
-    top: 490px;
-    left: -150px;
-    width: 617px;
-    height: 8px;
+    top: 51.2vh;
+    left: -9vw;
+    width: 36vw;
+    height: 0.9vh;
     z-index: -1;
     rotate: -90deg;
 }
 
 .work img {
     position: absolute;
-    width: 150px;
+    width: 9vw;
     height: auto;
 }
 
 .dartmouth img {
-    left: 180px;
-    top: 220px;
+    left: 18vh;
+    top: 23vh;
 }
 
 .dartmouth h2,
@@ -86,14 +85,14 @@
 .dartmouth p {
     color: #4a4a4a;
     position: relative;
-    top: 210px;
-    left: 360px;
-    max-width: 700px;
+    top: 23vh;
+    left: 36vh;
+    max-width: 60vh;
 }
 
 .ivl img {
-    left: 180px;
-    top: 420px;
+    left: 18vh;
+    top: 43vh;
 }
 
 .ivl h2,
@@ -101,14 +100,14 @@
 .ivl p {
     color: #4a4a4a;
     position: relative;
-    top: 400px;
-    left: -180px;
-    max-width: 700px;
+    top: 42vh;
+    left: -24vh;
+    max-width: 60vh;
 }
 
 .heng img {
-    left: 180px;
-    top: 610px;
+    left: 18vh;
+    top: 63vh;
 }
 
 .heng h2,
@@ -116,57 +115,57 @@
 .heng p {
     color: #4a4a4a;
     position: relative;
-    top: 600px;
-    left: -720px;
-    max-width: 700px;
+    top: 63vh;
+    left: -84vh;
+    max-width: 60vh;
 }
 
 .projects h1 {
-    left: 600px;
+    left: 35vw;
 }
 
 .project-bar {
     position: absolute;
     content: "";
     background: #4a4a4a;
-    top: 110px;
-    left: 603px;
-    width: 410px;
-    height: 8px;
+    top: 11vh;
+    left: 35vw;
+    width: 24vw;
+    height: 0.9vh;
     z-index: -1;
 }
 
 .yacht img {
     position: absolute;
-    width: 650px;
-    top: 450px;
-    left: 530px;
+    width: 40vw;
+    top: 50vh;
+    left: 30vw;
 }
 
 .yacht p {
     position: relative;
     color: #4a4a4a;
-    top: 260px;
-    left: 270px;
-    max-width: 550px;
+    top: 26vh;
+    left: 10vw;
+    max-width: 30vw;
     font-size: 1.1em;
     text-align: left;
 }
 
 .moxopal img {
     position: absolute;
-    width: 400px;
-    top: 350px;
-    left: 900px;
+    width: 25vw;
+    top: 35vh;
+    left: 50vw;
     z-index: 10;
 }
 
 .moxopal p {
     position: relative;
     color: #4a4a4a;
-    top: 130px;
-    left: 600px;
-    max-width: 330px;
+    top: 13vh;
+    left: 35vw;
+    max-width: 25vw;
     font-size: 1.1em;
     text-align: left;
 }
