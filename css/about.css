@@ -181,6 +181,7 @@
     opacity: 0;
     pointer-events: none;
     text-align: center;
+    width: 17vw;
 }
 
 .timeline-wrapper:hover {
@@ -198,29 +199,25 @@
 }
 
 .caption1 {
-    padding-top: 430px;
-    width: 300px;
+    padding-top: 45vh;
     animation: fadeOut 0.1s ease forwards;
 }
 
 .caption2 {
-    padding-top: 420px;
-    width: 300px;
+    padding-top: 43vh;
     animation: fadeOut 0.1s ease forwards;
 }
 
 .caption3 {
-    padding-top: 400px;
-    padding-left: 10px;
-    width: 300px;
+    padding-top: 43vh;
+    padding-left: 1vw;
     animation: fadeOut 0.1s ease forwards;
     white-space: nowrap;
 }
 
 .caption4 {
-    padding-top: 370px;
-    padding-left: 75px;
-    width: 300px;
+    padding-top: 41vh;
+    padding-left: 6vw;
     animation: fadeOut 0.1s ease forwards;
     white-space: nowrap;
 }
