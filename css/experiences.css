@@ -40,7 +40,7 @@
 }
 
 .experiences-container h1 {
-    position: absolute;
+    position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 5em;
     color: #4a4a4a;
@@ -52,32 +52,34 @@
 }
 
 .work-title {
+    top: 32vh;
+    left: 18vw;
     rotate: -90deg;
-    top: 45vh;
-    left: -12vw;
+    width: 60vw;
+
 }
 
 .work-bar {
-    position: absolute;
+    position: relative;
     content: "";
     background: #4a4a4a;
-    top: 51.2vh;
-    left: -9vw;
-    width: 36vw;
+    top: 55.2vh;
+    left: -25vw;
+    width: 53vw;
     height: 0.9vh;
     z-index: -1;
     rotate: -90deg;
 }
 
 .work img {
-    position: absolute;
-    width: 9vw;
+    position: relative;
+    width: 11vw;
     height: auto;
 }
 
 .dartmouth img {
-    left: 18vh;
-    top: 23vh;
+    left: -43vw;
+    top: 22vh;
 }
 
 .dartmouth h2,
@@ -85,14 +87,15 @@
 .dartmouth p {
     color: #4a4a4a;
     position: relative;
-    top: 23vh;
-    left: 36vh;
+    top: 2vh;
+    left: -31vw;
     max-width: 60vh;
 }
 
 .ivl img {
-    left: 18vh;
-    top: 43vh;
+    position: relative;
+    left: -65vw;
+    top: 45vh;
 }
 
 .ivl h2,
@@ -100,14 +103,14 @@
 .ivl p {
     color: #4a4a4a;
     position: relative;
-    top: 42vh;
-    left: -24vh;
-    max-width: 60vh;
+    top: 25vh;
+    left: -53vw;
+    max-width: 65vh;
 }
 
 .heng img {
-    left: 18vh;
-    top: 63vh;
+    left: -89vw;
+    top: 68vh;
 }
 
 .heng h2,
@@ -115,57 +118,59 @@
 .heng p {
     color: #4a4a4a;
     position: relative;
-    top: 63vh;
-    left: -84vh;
+    top: 48vh;
+    left: -77vw;
     max-width: 60vh;
 }
 
 .projects h1 {
-    left: 35vw;
+    position: relative;
+    left: 60vw;
+    top: -20vh;
 }
 
 .project-bar {
-    position: absolute;
+    position: relative;
     content: "";
     background: #4a4a4a;
-    top: 11vh;
-    left: 35vw;
+    top: -9vh;
+    left: 36vw;
     width: 24vw;
     height: 0.9vh;
     z-index: -1;
 }
 
 .yacht img {
-    position: absolute;
+    position: relative;
     width: 40vw;
-    top: 50vh;
-    left: 30vw;
+    top: 25vh;
+    left: -15vw;
 }
 
 .yacht p {
     position: relative;
     color: #4a4a4a;
-    top: 26vh;
-    left: 10vw;
+    top: -55vh;
+    left: -13vw;
     max-width: 30vw;
     font-size: 1.1em;
     text-align: left;
 }
 
 .moxopal img {
-    position: absolute;
+    position: relative;
     width: 25vw;
-    top: 35vh;
-    left: 50vw;
+    top: 10vh;
+    left: 40vw;
     z-index: 10;
 }
 
 .moxopal p {
     position: relative;
     color: #4a4a4a;
-    top: 13vh;
-    left: 35vw;
-    max-width: 25vw;
+    top: -42vh;
+    left: 17.5vw;
+    max-width: 40vw;
     font-size: 1.1em;
     text-align: left;
 }

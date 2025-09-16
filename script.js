@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //swapping words
 
-    const words = ["coder.", "shutterbug.", "commitaholic.", "human.", "always hungry."];
+    const words = ["coder.", "photographer.", "works a lot.", "human.", "always hungry."];
     let current = 0;
     const swapWord = document.getElementById("swap-word");
 
