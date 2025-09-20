@@ -20,17 +20,6 @@ involvement-container {
     font-size: 3.3em;
 }
 
-.involvement-header::before {
-    position: relative;
-    content: "";
-    top: 20vh;
-    left: 60vw;
-    width: 3.4vw;
-    height: 0.6vh;
-    background-color: #4a4a4a;
-    rotate: 90deg;
-}
-
 #involvement p {
     position: relative;
     font-size: 1.3em;
@@ -48,36 +37,35 @@ involvement-container {
     position: relative;
     width: 100px;
     height: auto;
-    margin: 0 20px;
 }
 
 .opal img {
     width: 13vw;
-    top: 25vh;
-    left: 41.5vw;
+    top: -25vh;
+    left: 60vw;
 }
 
 .tsa img {
     width: 12vw;
-    top: -10vh;
-    left: 48vw;
+    top: -75vh;
+    left: 73vw;
     z-index: -1;
 }
 
 .ismp img {
     width: 10vw;
-    top: 15vh;
-    left: 35vw;
+    top: -55vh;
+    left: 87vw;
 }
 
 .aapihm img {
     width: 10vw;
-    top: 0vh;
-    left: 30vw;
+    top: -80vh;
+    left: 83vw;
 }
 
 .dartslam img {
     width: 10vw;
-    top: 20vh;
-    left: 55vw;
+    top: -94vh;
+    left: 72vw;
 }
