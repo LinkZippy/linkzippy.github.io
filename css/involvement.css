@@ -1,12 +1,16 @@
-involvement-container {
+.involvement-container {
     position: relative;
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: row;
-    align-items: center;
+    justify-content: flex-start;
+    /* was "row", which is invalid for justify-content */
+    align-items: flex-start;
+    /* consistent alignment */
     max-height: 80vh;
-    overflow: visible;
+    overflow: hidden;
+    /* prevent overflow issues */
+    box-sizing: border-box;
 }
 
 .involvement-header {
@@ -18,6 +22,11 @@ involvement-container {
     top: 15vh;
     left: 10vw;
     font-size: 3.3em;
+    max-width: 80vw;
+    /* ensure header never overflows */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 #involvement p {
@@ -27,18 +36,29 @@ involvement-container {
     top: 16vh;
     left: 10.5vw;
     text-align: justify;
+    overflow-wrap: break-word;
+    /* new: ensures text fits */
+    word-break: break-word;
+    hyphens: auto;
+    box-sizing: border-box;
 }
 
+/* Shared image styling */
 .opal img,
 .tsa img,
 .ismp img,
 .aapihm img,
 .dartslam img {
     position: relative;
-    width: 100px;
     height: auto;
+    max-width: 15vw;
+    /* responsive cap */
+    min-width: 70px;
+    /* ensures not too tiny */
+    box-sizing: border-box;
 }
 
+/* Individual placements */
 .opal img {
     width: 13vw;
     top: -25vh;

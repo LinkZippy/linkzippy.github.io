@@ -65,10 +65,17 @@
 #about p {
     font-size: 1.3em;
     max-width: 40vw;
+    /* still viewport-based for the "look" */
     margin-left: 8vw;
     padding-top: 2vw;
-    opacity: 0;
     text-align: justify;
+
+    /* new lines to fix overflow on all screens */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    box-sizing: border-box;
+
 }
 
 #about p.visible {
