@@ -31,149 +31,142 @@
     margin: 0 2vw;
 }
 
-.work,
+/* Container with two columns */
+.experiences-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* --- WORK (left column) --- */
+.work {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    margin-left: -5rem;
+}
+
+/* Vertical title */
+.work-title {
+    writing-mode: vertical-rl;
+    rotate: 180deg;
+    font-size: clamp(5rem, 3vw, 2.5rem);
+    margin-left: -10rem;
+    margin-bottom: 15rem;
+    font-weight: 700;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+/* Work items stacked */
+.work-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.work-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.work-entry img {
+    width: clamp(100px, 13vw, 190px);
+    height: auto;
+    flex-shrink: 0;
+}
+
+.work-text h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.work-text h3 {
+    margin: 0.2rem 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #4a4a4a;
+}
+
+.work-text p {
+    margin-bottom: 2rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4a4a4a;
+    max-width: 100ch;
+}
+
+/* --- PROJECTS (right column) --- */
 .projects {
     display: flex;
-    align-items: left;
-    justify-content: center;
-    position: relative;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.experiences-container h1 {
-    position: relative;
-    font-family: "Poppins", sans-serif;
-    font-size: 5em;
+.project-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     color: #4a4a4a;
-}
-
-.experiences-container h2 {
-    font-weight: 600;
-    font-size: 2em;
-}
-
-.work-title {
-    top: 32vh;
-    left: 18vw;
-    rotate: -90deg;
-    width: 60vw;
-
-}
-
-.work-bar {
-    position: relative;
-    content: "";
-    background: #4a4a4a;
-    top: 55.2vh;
-    left: -25vw;
-    width: 53vw;
-    height: 0.9vh;
-    z-index: -1;
-    rotate: -90deg;
-}
-
-.work img {
-    position: relative;
-    width: 11vw;
-    height: auto;
-}
-
-.dartmouth img {
-    left: -43vw;
-    top: 22vh;
-}
-
-.dartmouth h2,
-.dartmouth h3,
-.dartmouth p {
-    color: #4a4a4a;
-    position: relative;
-    top: 2vh;
-    left: -31vw;
-    max-width: 60vh;
-}
-
-.ivl img {
-    position: relative;
-    left: -65vw;
-    top: 45vh;
-}
-
-.ivl h2,
-.ivl h3,
-.ivl p {
-    color: #4a4a4a;
-    position: relative;
-    top: 25vh;
-    left: -53vw;
-    max-width: 65vh;
-}
-
-.heng img {
-    left: -89vw;
-    top: 68vh;
-}
-
-.heng h2,
-.heng h3,
-.heng p {
-    color: #4a4a4a;
-    position: relative;
-    top: 48vh;
-    left: -77vw;
-    max-width: 60vh;
-}
-
-.projects h1 {
-    position: relative;
-    left: 60vw;
-    top: -20vh;
+    margin: 0;
 }
 
 .project-bar {
-    position: relative;
-    content: "";
+    width: 80px;
+    height: 6px;
     background: #4a4a4a;
-    top: -9vh;
-    left: 36vw;
-    width: 24vw;
-    height: 0.9vh;
-    z-index: -1;
+    margin-bottom: 1rem;
+    border-radius: 3px;
 }
 
-.yacht img {
-    position: relative;
-    width: 40vw;
-    top: 25vh;
-    left: -15vw;
+.project-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.yacht p {
-    position: relative;
+.project-entry img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 0.5rem;
+}
+
+.project-entry p {
+    font-size: 1rem;
     color: #4a4a4a;
-    top: -55vh;
-    left: -13vw;
-    max-width: 30vw;
-    font-size: 1.1em;
-    text-align: left;
+    line-height: 1.6;
+    max-width: 50ch;
+    margin: 0;
 }
 
-.moxopal img {
-    position: relative;
-    width: 25vw;
-    top: 10vh;
-    left: 38vw;
-    z-index: 10;
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .experiences-container {
+        grid-template-columns: 1fr;
+        /* stack work above projects */
+    }
+
+    .work {
+        grid-template-columns: 1fr;
+        /* remove vertical title column */
+    }
+
+    .work-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
 }
 
-.moxopal p {
-    position: relative;
-    color: #4a4a4a;
-    top: -42vh;
-    left: 17.5vw;
-    max-width: 40vw;
-    font-size: 1.1em;
-    text-align: left;
-}
 
 .slide-in-down {
     animation: slideInDown 1s ease forwards;
